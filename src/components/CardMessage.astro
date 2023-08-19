@@ -1,0 +1,49 @@
+---
+const { message, dir } = Astro.props;
+---
+
+<div id="container">
+  <h1 lang="ar" dir={dir} id="message">{message}</h1>
+</div>
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+
+  #container {
+    padding: 35px 70px;
+    width: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #3b82f6;
+    color: white;
+  }
+
+  #message {
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    line-height: 36px;
+    font-size: 40px;
+    letter-spacing: -1.2px;
+  }
+
+  @media (max-width: 768px) {
+    #container {
+      padding: 17.5px 35px;
+    }
+
+    #message {
+      font-size: 32px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    #container {
+      padding: 10px 30px;
+    }
+
+    #message {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+</style>
