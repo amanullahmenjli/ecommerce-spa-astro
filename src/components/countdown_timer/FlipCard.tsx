@@ -36,18 +36,18 @@ const FlipCard: FC<{ content: number; type: string }> = ({ content, type }) => {
                 className={'flip-card font-semibold text-[#eee]'}
                 data-content={type}
             >
-                <div className="top leading-9 text-4xl md:text-6xl lg:text-8xl">
+                <div className="top leading-9 text-4xl md:text-6xl lg:text-7xl">
                     {displayContent}
                 </div>
-                <div className="bottom text-4xl md:text-6xl lg:text-8xl">
+                <div className="bottom text-4xl md:text-6xl lg:text-7xl">
                     {displayContent}
                 </div>
                 {isFlipping && (
                     <>
-                        <div className="top-flip text-4xl md:text-6xl lg:text-8xl">
+                        <div className="top-flip text-4xl md:text-6xl lg:text-7xl">
                             {displayContent}
                         </div>
-                        <div className="bottom-flip text-4xl md:text-6xl lg:text-8xl">
+                        <div className="bottom-flip text-4xl md:text-6xl lg:text-7xl">
                             {displayContent}
                         </div>
                     </>
