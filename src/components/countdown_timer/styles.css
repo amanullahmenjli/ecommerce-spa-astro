@@ -1,101 +1,96 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    font-family: Inter;
+}
 
-*, *::after, *::before {
-  box-sizing: border-box;
-  font-family: Roboto Mono;
-  font-size: 2rem;
-  font-weight: 600;
-  color: #EEEEEE;
-  }
-  
-
-  
-  .flip-card {
+.flip-card {
     position: relative;
     display: inline-flex;
     flex-direction: column;
-    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, .2);
-    border-radius: .1em;
-    background-color: #47415C;
-  }
-  
-  .top,
-  .bottom,
-  .flip-card .top-flip,
-  .flip-card .bottom-flip {
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2);
+    border-radius: 0.1em;
+    background-color: #47415c;
+}
+
+.top,
+.bottom,
+.flip-card .top-flip,
+.flip-card .bottom-flip {
     height: 1em;
     line-height: 1;
-    padding: .5em .2em;
+    padding: 0.5em 0.2em;
     overflow: hidden;
-  }
-  
+}
 
-  .top,
-  .flip-card .top-flip {
-    background-color: #B91C1C;
-    border-radius: .1em;
-    border-bottom: 1px solid #837B9C;
-  }
-  
-  .bottom,
-  .flip-card .bottom-flip {
-    background-color: #DC2323;
+.top,
+.flip-card .top-flip {
+    background-color: #b91c1c;
+    border-radius: 0.1em;
+    border-bottom: 1px solid #837b9c;
+}
+
+.bottom,
+.flip-card .bottom-flip {
+    background-color: #dc2323;
     display: flex;
     align-items: flex-end;
-    border-radius: .1em;
-  }
-  
-  .flip-card .top-flip {
+    border-radius: 0.1em;
+}
+
+.flip-card .top-flip {
     position: absolute;
     width: 100%;
     animation: flip-top 250ms ease-in;
     transform-origin: bottom;
-  }
-  
-  @keyframes flip-top {
+}
+
+@keyframes flip-top {
     100% {
-      transform: rotateX(90deg);
+        transform: rotateX(90deg);
     }
-  }
-  
-  .flip-card .bottom-flip {
+}
+
+.flip-card .bottom-flip {
     position: absolute;
     bottom: 0;
     width: 100%;
     animation: flip-bottom 250ms ease-out 250ms;
     transform-origin: top;
     transform: rotateX(90deg);
-  }
-  
-  @keyframes flip-bottom {
+}
+
+@keyframes flip-bottom {
     100% {
-      transform: rotateX(0deg);
+        transform: rotateX(0deg);
     }
-  }
-  
-  .container {
+}
+
+.container {
     display: flex;
     justify-content: center;
-    gap: .5em;
-  }
-  
-  .container-segment {
+    gap: 0.5em;
+}
+
+.container-segment {
     display: flex;
     flex-direction: column;
-    gap: .1em;
+    gap: 0.1em;
     align-items: center;
-  }
-  
-  .segment {
+}
+
+.segment {
     display: flex;
-    gap: .1em;
-  }
-  
-  .segment-title {
-    font-size: .5rem;
+    gap: 0.1em;
+}
+
+.segment-title {
+    font-size: 0.5rem;
     font-weight: 400;
     text-align: center;
-    margin-top: .2rem;
-    color: #47415C;
-  }
+    margin-top: 0.2rem;
+    color: #47415c;
+}
