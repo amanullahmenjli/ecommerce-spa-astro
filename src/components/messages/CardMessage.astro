@@ -1,0 +1,39 @@
+---
+const { message, dir } = Astro.props
+---
+
+<div id="container" class="px-[30px] py-2 md:py-4 bg-blue-500 text-white w-fit">
+    <h1
+        lang="ar"
+        dir={dir}
+        id="message"
+        class="text-lg leading-7 md:text-3xl lg:text-4xl font-semibold fadeInOut"
+    >
+        {message}
+    </h1>
+</div>
+
+<style>
+    .fadeInOut {
+        animation: fadeInOut 2s infinite;
+    }
+    /* animations.module.css */
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 0.5s;
+    }
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
+    }
+
+    @keyframes fadeInOut {
+        0%,
+        100% {
+            opacity: 0;
+        }
+        50% {
+            opacity: 1;
+        }
+    }
+</style>
