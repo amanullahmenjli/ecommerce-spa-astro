@@ -26,7 +26,7 @@ class FlipCountdownTimer extends Component<
 
         this.state = {
             remainingTime: {
-                days: 0,
+                days: 7,
                 hours: 0,
                 minutes: 0,
                 seconds: 0,
@@ -83,7 +83,7 @@ class FlipCountdownTimer extends Component<
                         <FlipCard type="days-ones" content={days} />
                     </div>
                     <span className="segment-title text-xs md:text-lg">
-                        Days
+                        Jours
                     </span>
                 </div>
                 <div className="container-segment">
@@ -91,7 +91,7 @@ class FlipCountdownTimer extends Component<
                         <FlipCard type="hours-ones" content={hours} />
                     </div>
                     <span className="segment-title text-xs md:text-lg">
-                        Hours
+                        Heures
                     </span>
                 </div>
                 <div className="container-segment">
@@ -107,7 +107,7 @@ class FlipCountdownTimer extends Component<
                         <FlipCard type="seconds-ones" content={seconds} />
                     </div>
                     <span className="segment-title text-xs md:text-lg">
-                        Seconds
+                        Secondes
                     </span>
                 </div>
             </div>
