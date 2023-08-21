@@ -3,12 +3,12 @@ import ProductImage from './ProductImage.astro'
 const { image, name, price, old_price, link, score } = Astro.props
 ---
 
-<div class="flex-col flex gap-2 md:gap-1 w-[300px] md:w-[220px]">
+<div class="flex-col flex gap-2 md:gap-1 w-[260px] md:w-[220px]">
     <a href={link}>
         <div class="flex-col flex gap-2 md:gap-1">
             <ProductImage image={image} score={score} />
             <p
-                class="font-semibold text-3xl md:text-xl w-[300px] md:w-[220px] leading-5 mt-2"
+                class="font-semibold text-3xl md:text-xl w-[260px] md:w-[220px] leading-5 mt-2"
             >
                 {name}
             </p>
