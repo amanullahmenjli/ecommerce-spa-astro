@@ -3,12 +3,12 @@ import ProductImage from './ProductImage.astro'
 const { image, name, price, old_price, link, score } = Astro.props
 ---
 
-<div class="flex-col flex gap-2 md:gap-1 w-[300px] md:w-[220px]">
+<div class="flex-col flex gap-2 md:gap-1 w-[260px] md:w-[220px]">
     <a href={link}>
         <div class="flex-col flex gap-2 md:gap-1">
             <ProductImage image={image} score={score} />
             <p
-                class="font-semibold text-3xl md:text-xl w-[300px] md:w-[220px] leading-5 mt-2"
+                class="font-semibold text-2xl md:text-xl w-[260px] md:w-[220px] leading-5 mt-2"
             >
                 {name}
             </p>
@@ -17,13 +17,13 @@ const { image, name, price, old_price, link, score } = Astro.props
                 <span
                     class="text-red-500 font-bold inline-flex items-end gap-1 discounted-price"
                 >
-                    <p class="text-4xl md:text-3xl">{price}</p>
-                    <p class="text-xl md:text-sm leading-5">DT</p>
+                    <p class="text-3xl md:text-3xl">{price}</p>
+                    <p class="text-lg md:text-sm leading-5">DT</p>
                 </span>
                 <span
                     class="text-gray-500 font-bold inline-flex items-end gap-1"
                 >
-                    <p class="line-through text-2xl md:text-xl">
+                    <p class="line-through text-xl">
                         {old_price}
                     </p>
                     {old_price != null ? <p class="text-xs">DT</p> : ''}
@@ -34,7 +34,7 @@ const { image, name, price, old_price, link, score } = Astro.props
 
     <a href={link}>
         <button
-            class="w-full h-[47px] bg-red-500 text-white rounded hover:scale-105 ease-in-out text-3xl"
+            class="w-full h-[47px] bg-red-500 text-white rounded hover:scale-105 ease-in-out text-xl"
         >
             J'achete
         </button>
