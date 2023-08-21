@@ -77,30 +77,38 @@ class FlipCountdownTimer extends Component<
         const { days, hours, minutes, seconds } = this.state.remainingTime
 
         return (
-            <div className="container">
+            <div className="container  mx-auto">
                 <div className="container-segment">
                     <div className="segment">
                         <FlipCard type="days-ones" content={days} />
                     </div>
-                    <span className="segment-title">Days</span>
+                    <span className="segment-title text-xs md:text-lg">
+                        Days
+                    </span>
                 </div>
                 <div className="container-segment">
                     <div className="segment">
                         <FlipCard type="hours-ones" content={hours} />
                     </div>
-                    <span className="segment-title">Hours</span>
+                    <span className="segment-title text-xs md:text-lg">
+                        Hours
+                    </span>
                 </div>
                 <div className="container-segment">
                     <div className="segment">
                         <FlipCard type="minutes-ones" content={minutes} />
                     </div>
-                    <span className="segment-title">Minutes</span>
+                    <span className="segment-title text-xs md:text-lg">
+                        Minutes
+                    </span>
                 </div>
                 <div className="container-segment">
                     <div className="segment">
                         <FlipCard type="seconds-ones" content={seconds} />
                     </div>
-                    <span className="segment-title">Seconds</span>
+                    <span className="segment-title text-xs md:text-lg">
+                        Seconds
+                    </span>
                 </div>
             </div>
         )

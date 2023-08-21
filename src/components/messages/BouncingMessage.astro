@@ -6,7 +6,7 @@ const { message, dir } = Astro.props
     lang="ar"
     dir={dir}
     id="message"
-    class="font-black text-base pr-[10] pl-[5] py-0 md:text-2xl md:py-[5] lg:text-4xl"
+    class="font-black text-base pr-[10] pl-[5] py-0 md:text-2xl md:py-[5] text-center"
 >
     {message}
 </h1>
@@ -21,10 +21,10 @@ const { message, dir } = Astro.props
             transform: translateY(0);
         }
         40% {
-            transform: translateY(-20px);
+            transform: translateY(-10px);
         }
         60% {
-            transform: translateY(-10px);
+            transform: translateY(-5px);
         }
     }
 

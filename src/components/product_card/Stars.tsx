@@ -40,7 +40,7 @@ export default function Stars({ score }: StarsProps) {
                     key={index}
                     src={star}
                     alt={`Star ${index}`}
-                    className="w-5 h-auto md:w-6  lg:w-7"
+                    className="w-6 "
                 /> // Rendering each star image
             ))}
         </div>
