@@ -1,0 +1,137 @@
+---
+import ProductCard from '../components/product_card/ProductCard.astro'
+import jarraya from '../assets/images/jarraya.png'
+import Hero from '../layouts/Hero.astro'
+---
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>Astro</title>
+    </head>
+    <body
+        class="bg-[url('~/assets/images/mobile-background.svg')] md:bg-[url('~/assets/images/big-bg.svg')] bg-no-repeat bg-top"
+    >
+        <Hero />
+
+        <br />
+        <main class="mx-4">
+            <h1 class="text-3xl text-center mb-6">Nos produits</h1>
+            <div class="flex flex-wrap justify-start -mx-4 gap-5">
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    old_price="580"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    link="#"
+                />
+                <ProductCard
+                    image={jarraya}
+                    name="Matelas bébé Soft"
+                    price="352"
+                    link="#"
+                />
+            </div>
+        </main>
+    </body>
+</html>
+
+<style>
+    #products {
+        width: max-content;
+        display: flex;
+        flex-wrap: wrap;
+        margin: auto;
+        justify-content: space-around;
+        vertical-align: auto;
+    }
+    #prod-section {
+        display: flex;
+        justify-content: center;
+    }
+</style>

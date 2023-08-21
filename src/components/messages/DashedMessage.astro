@@ -4,13 +4,13 @@ const { message, dir } = Astro.props
 
 <div
     id="container"
-    class="border-dashed border-4 border-black w-fit pr-[10px] pl-[5px] px-0 leading-0 md:py-2 md:pl-1 lg:pr-[10px] lg:pl-0 lg:pt-[15px] lg:pb-[20px]"
+    class="border-dashed border-4 border-black w-fit pr-[10px] pl-[5px] px-0 leading-0 md:py-2 md:pl-1 justify-self-center mx-auto"
 >
     <h1
         lang="ar"
         dir={dir}
         id="message"
-        class="text-lg md:text-2xl lg:text-4xl font-black leading-[48px]"
+        class="text-lg md:text-2xl font-black leading-[48px] text-center"
     >
         {message}
     </h1>

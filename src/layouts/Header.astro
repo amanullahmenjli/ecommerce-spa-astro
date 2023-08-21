@@ -1,0 +1,28 @@
+---
+import { Image } from 'astro:assets'
+import Logo from '~/assets/images/Logo.jpg'
+import DashedMessage from '../components/messages/DashedMessage.astro'
+import FlipCountdownTimer from '../components/countdown_timer/FlipCountdownTimer'
+import BouncingMessage from '../components/messages/BouncingMessage.astro'
+import CardMessage from '../components/messages/CardMessage.astro'
+---
+
+<header
+    class="flex flex-col gap-3 justify-center w-full text-center relative pt-2 md:pt-6"
+>
+    <Image
+        src={Logo}
+        alt="logo"
+        class="w-[266px] mx-auto sm::absolute sm:top-4 sm:left-4"
+    />
+
+    <DashedMessage message="إشري بأرخص الأسعار في تونس 🔥" dir="rtl" />
+
+    <FlipCountdownTimer client:load />
+
+    <BouncingMessage
+        message="عدي كوموند و التوصيل لباب الدار، و الدفع عند الاستلام"
+        dir="rtl"
+    />
+    <CardMessage message="التوصيل مجاني لكامل تراب الجمهورية" />
+</header>
