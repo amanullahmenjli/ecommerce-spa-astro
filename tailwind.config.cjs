@@ -1,4 +1,4 @@
-import preline from 'preline/plugin.js'
+const defaultTheme = require('tailwindcss/defaultTheme')
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -8,8 +8,6 @@ module.exports = {
         './src/**/*.{astro,js,jsx,ts,tsx,vue}',
         'node_modules/preline/dist/*.js',
     ],
-    theme: {
-        extend: {},
-    },
+    theme: {},
     plugins: [require('preline/plugin')],
 }

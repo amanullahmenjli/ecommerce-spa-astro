@@ -1,13 +1,21 @@
-import { defineConfig } from 'astro/config';
-import react from "@astrojs/react";
-import tailwind from "@astrojs/tailwind";
+import { defineConfig } from 'astro/config'
+import react from '@astrojs/react'
+import tailwind from '@astrojs/tailwind'
 
-import svelte from "@astrojs/svelte";
+import svelte from '@astrojs/svelte'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react(), tailwind(), svelte()],
-  experimental: {
-    assets: true
-  }
-});
+    integrations: [
+        react(),
+        tailwind({
+            config: {
+                applyBaseStyles: false,
+            },
+        }),
+        svelte(),
+    ],
+    experimental: {
+        assets: true,
+    },
+})

@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Register your custom font family and tell the browser where to find it. */
+@font-face {
+    font-family: 'TheSans';
+    src: url('/fonts/TheSans-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
