@@ -8,6 +8,7 @@ module.exports = {
         './src/**/*.{astro,js,jsx,ts,tsx,vue}',
         'node_modules/preline/dist/*.js',
     ],
-    theme: {},
+    theme: {
+      },
     plugins: [require('preline/plugin')],
 }

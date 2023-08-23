@@ -12,8 +12,8 @@ import { atom } from 'nanostores'
 // Cart drawer state (open or closed) with initial value (false) and no persistent state (local storage)
 export const isCartDrawerOpen = atom(false)
 
-// // Cart is updating state (true or false) with initial value (false) and no persistent state (local storage)
-// export const isCartUpdating = atom(false);
+// Cart is updating state (true or false) with initial value (false) and no persistent state (local storage)
+export const isCartUpdating = atom(false);
 
 // const emptyCart = {
 //   id: "",

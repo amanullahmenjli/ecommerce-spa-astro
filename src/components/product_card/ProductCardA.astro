@@ -1,0 +1,42 @@
+---
+import BuyButton from '../BuyButton.astro'
+import ProductImage from './ProductImage.astro'
+const { image, name, price, old_price, link, score } = Astro.props
+---
+
+<!--Product Card column layout -->
+<div class="flex-col flex gap-[10px] justify-center">
+    <!--Link  -->
+    <a href={link}>
+        <ProductImage image={image} score={score} />
+        <BuyButton />
+        <p class="">
+            {name}
+        </p>
+
+        <span class="text-red-500 font-bold text-center">
+            <p class="text-2xl discounted-price inline-block">
+                {price + 'DT'}
+            </p>&nbsp;&nbsp;&nbsp;
+            <span class="line-through text-xl font-bold text-gray-500">
+                {old_price + (old_price != null ? 'DT' : '')}
+            </span>
+        </span>
+    </a>
+</div>
+
+<style>
+    @keyframes priceAnimation {
+        0%,
+        100% {
+            transform: scale(1);
+        }
+        50% {
+            transform: scale(1.1);
+        }
+    }
+
+    .discounted-price {
+        animation: priceAnimation 2s infinite; /* Repeating animation */
+    }
+</style>

@@ -1,0 +1,59 @@
+---
+import ProductImageA from './ProductImageA.astro'
+const { image, name, price, old_price, link, score } = Astro.props
+
+let old_pricee
+
+if (old_price == '') {
+    old_pricee = ''
+} else {
+    old_pricee = old_price + ' DT'
+}
+---
+
+<div
+    class="flex flex-col gap-[10px] pb-[10px] max-w-[285px] sm:min-w-[138px] sm:max-w-[163px] md:w-[223px] lg:w-[283px]"
+>
+    <ProductImageA image={image} score={score} />
+    <div class="justify-center flex pb-[10px] border-b-[1px] border-[#7B7B7B]">
+        <div class="text-center px-[10px] py-[5px] bg-[#E60D54]">
+            <div
+                class="text-white text-[12px] leading-[20px] first-letter font-medium tracking-[0.25px]"
+                639px
+            >
+                J’Achète
+            </div>
+        </div>
+    </div>
+    <div class="flex flex-col gap-[10px] justify-center">
+        <p
+            class="font-semibold text-[14px] leading-[18px] tracking-[0.2px] text-[#202020] text-center"
+        >
+            Oreillers En Mousse | 50x50cm
+        </p>
+
+        <div class="flex flex-row gap-[10px] text-center m-auto">
+            <div class="flex flex-row gap-[10px] text-center m-auto">
+                <p
+                    class="font-bold text-[14px] leading-[20px] tracking-[0.25px] text-[#7F7F7F] line-through text-center"
+                >
+                    {old_pricee}
+
+                    <p
+                        class="font-bold text-[18px] leading-[20px] tracking-[0.25px] text-[#E60D54] text-center"
+                    >
+                        {price} DT
+                    </p>
+                </p>
+            </div>
+
+            <style>
+                @import url('https://fonts.googleapis.com/css?family=Roboto&display=block');
+
+                * {
+                    font-family: 'Roboto';
+                }
+            </style>
+        </div>
+    </div>
+</div>
