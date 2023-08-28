@@ -1,7 +1,16 @@
 ---
-import Body from '../layouts/Body.astro'
 const title: String = 'Title'
 import '../styles/main.css'
+import { ViewTransitions } from 'astro:transitions';
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+import ProductsSection from '../components/ProductsSection.astro'
+import { Image } from 'astro:assets'
+import Logo from '~/assets/images/Logo.jpg'
+import DashedMessage from '../components/messages/DashedMessage.astro'
+import FlipCountdownTimer from '../components/countdown_timer/FlipCountdownTimer.astro'
+import BouncingMessage from '../components/messages/BouncingMessage.astro'
+import CardMessage from '../components/messages/CardMessage.astro'
 ---
 
 <!DOCTYPE html>
@@ -10,8 +19,47 @@ import '../styles/main.css'
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
+        <ViewTransitions />
+
     </head>
-    <Body />
+
+    
+    <body
+        class="relative bg-[url('~/assets/images/big-bg.png')] bg-top bg-cover bg-fixed bg-no-repeat gap-3 flex flex-col"
+    >
+    <header  transition:persist 
+    class="flex flex-col gap-3 justify-center w-full text-center relative pt-2 px-2"
+>
+    <a href="/"><Image
+        src={Logo}
+        alt="logo"
+        class="h-28 w-auto mx-auto sm::absolute sm:top-4 sm:left-4"
+    /></a>
+
+    <DashedMessage message="إشري بأرخص الأسعار في تونس 🔥" dir="rtl" />
+
+    <!-- <FlipCountdownTimer /> -->
+
+    <BouncingMessage
+        message="عدي كوموند و التوصيل لباب الدار، و الدفع عند الاستلام"
+        dir="rtl"
+    />
+    <CardMessage message="التوصيل مجاني لكامل تراب الجمهورية" />
+</header>
+        <ProductsSection />
+        <Footer />
+    </body>
 
 
 </html>
+
+
+
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Roboto&display=block');
+
+    * {
+        font-family: 'Roboto';
+    }
+</style>

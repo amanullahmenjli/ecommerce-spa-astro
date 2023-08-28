@@ -1,13 +1,23 @@
 ---
 import Footer from './Footer.astro'
 import Header from './Header.astro'
-import ProductsSection from './ProductsSection.astro'
+import data from "../../public/data.json";
+import jarraya from '../assets/images/jarraya.png'
+const image = [{
+    src: jarraya.src,
+    alt: "jarraya",
+  }];
+  
+
 ---
 
 <body
     class="relative bg-[url('~/assets/images/big-bg.png')] bg-top bg-cover bg-fixed bg-no-repeat gap-3 flex flex-col"
 >
     <Header />
-    <ProductsSection />
+    
     <Footer />
 </body>
+
+
+

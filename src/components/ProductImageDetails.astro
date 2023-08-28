@@ -1,0 +1,36 @@
+---
+// Import necessary modules and assets
+import { Image } from 'astro:assets'
+import Corners from '~/assets/images/Corners.svg'
+import Stars from './Stars.jsx'
+
+// Destructure props
+const { image, score } = Astro.props
+---
+
+<div id="Image" class="as relative box-content">
+    {/* Display the main image */}
+    <Image
+        src={image}
+        alt={'jarraya'}
+        id="pic"
+        class="as border-solid border-[0.5px] border-black border-opacity-50 w-full max-w-[460px]"
+    />
+    {/* Display the Corners image */}
+    <img
+        src={Corners.src}
+        width={Corners.width}
+        height={Corners.height}
+        id="Corners"
+        class="absolute as top-0 w-full max-w-[460px]"
+    />
+</div>
+
+<style>
+    /* Styling for the component */
+    .as {
+        aspect-ratio: auto 380 / 434; /* Maintain the specified aspect ratio */
+        flex: 0 1 auto; /* flex-grow, flex-shrink, flex-basis */
+        min-width: 0; /* Allow content to shrink past its original width */
+    }
+</style>

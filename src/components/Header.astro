@@ -10,15 +10,15 @@ import CardMessage from '../components/messages/CardMessage.astro'
 <header
     class="flex flex-col gap-3 justify-center w-full text-center relative pt-2 px-2"
 >
-    <Image
+    <a href="/"><Image
         src={Logo}
         alt="logo"
         class="h-28 w-auto mx-auto sm::absolute sm:top-4 sm:left-4"
-    />
+    /></a>
 
     <DashedMessage message="إشري بأرخص الأسعار في تونس 🔥" dir="rtl" />
 
-    <FlipCountdownTimer client:only="react" />
+    <FlipCountdownTimer client:only="react" transition:persist />
 
     <BouncingMessage
         message="عدي كوموند و التوصيل لباب الدار، و الدفع عند الاستلام"

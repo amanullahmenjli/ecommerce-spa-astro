@@ -1,4 +1,5 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
+const { nextui } = require("@nextui-org/react");
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
@@ -7,8 +8,26 @@ module.exports = {
         './public/**/*.astro',
         './src/**/*.{astro,js,jsx,ts,tsx,vue}',
         'node_modules/preline/dist/*.js',
+        "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
     ],
     theme: {
       },
-    plugins: [require('preline/plugin')],
+      darkMode: "class",
+
+    plugins: [nextui({
+      themes: {
+        light: {
+          colors: {
+            background: "#FFFFFF", // or DEFAULT
+            foreground: "#11181C", // or 50 to 900 DEFAULT
+            primary: {
+              //... 50 to 900
+              foreground: "#FFFFFF",
+              DEFAULT: "#e60d54",
+            },
+            // ... rest of the colors
+          },
+        }
+      },
+    })],
 }

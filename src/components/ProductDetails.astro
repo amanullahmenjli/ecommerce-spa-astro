@@ -1,0 +1,163 @@
+---
+import Form from './CustomRadio.jsx'
+import App from './CustomRadio.jsx'
+import CustomRadio from './CustomRadio.jsx'
+import ProductImageDetails from './ProductImageDetails.astro'
+import ProductImageA from './product_card/ProductImageA.astro'
+const { image, name, price, old_price, link, score } = Astro.props
+
+import {Button, Input} from "@nextui-org/react";
+
+
+let old_pricee: string
+
+if (old_price == '') {
+    old_pricee = ''
+} else {
+    old_pricee = old_price + ' DT'
+}
+
+import {RadioGroup, Radio, cn} from "@nextui-org/react";
+
+---
+
+
+<div class="flex flex-row flex-wrap w-full p-[32px] gap-[60px]  justify-center items-center">
+    <ProductImageDetails image={image} score={score} class="w-full h-auto "/>
+
+
+    <div class="flex flex-col max-h-[530px] align-middle gap-[16px] font-semibold text-[30px]">
+        <h1 class="text-[24px]">Matelas En Mousse 1 Place 5 étoiles</h1>
+       <div class="font-normal text-[14px] w-[65ch]  text-[#848484]">
+            <p class="mb-4">Ce matelas en mousse de bonne qualité et de <strong>densité moyenne de 20/22</strong> ajoute du confort à votre chambre ou à votre salon.<br>
+                Il est <strong>garantie 5 ans</strong> et <strong>livré à domicile gratuitement</strong> sur toute la Tunisie.</p>
+                <p>Ce matelas est <strong>robuste, solide et ferme</strong>, et offre un excellent soutien et une tenue durable pour une utilisation <strong>jour après jour</strong>.<br>
+                Sa conception en mousse lui rend extrêmement <strong>flexible, léger</strong>.</p></div>
+
+        <form action="">
+              <div class="grid-flow-row gap-4 ">
+                
+                <h1 class="text-xl ">Choisir une Option:</h1>
+                <Form price={price} old_pricee={old_pricee} client:only="react"></Form>
+                
+                <h1 class="text-xl">Insérez votre Informations</h1>
+                <div class="flex flex-row gap-3">
+                <Input client:load size='sm' label="Prénom" name='prénom' isRequired variant='faded' radius='sm'></Input>
+                <Input client:load size='sm'  label="Nom de famille" name='nom de famille' isRequired variant='faded' radius='sm'></Input>
+              </div>
+              <div class="flex flex-row gap-3">
+                <Input client:load size='sm'  label="Numéro de téléphone" name='numéro de téléphone' isRequired variant='faded' radius='sm'></Input>
+                <Input client:load size='sm'  label="Adresse de livraison" name='Adresse de livraison' isRequired variant='faded' radius='sm'></Input>
+              </div>
+              </div>
+
+                
+                
+                
+
+                
+        <div class="flex flex-row flex-wrap row-auto justify-start align-middle gap-3">
+          <!-- Price -->
+          <p class="font-bold text-[26px] md:text-[36px] leading-0 tracking-[0.25px] text-[#E60D54] ">
+            {price} DT
+          </p>
+
+          <!-- Old Price -->
+          <p class="font-bold  text-[19px] md:text-[26px] leading-0 tracking-[0.25px] align-middle text-[#7F7F7F] line-through my-auto">
+            {old_pricee}
+          </p>
+
+          <!-- Quantity -->
+          <td class="row-auto">
+            <div class="form-row justify-content-center">
+              <div class="form-group mb-0">
+                <div class="input-group mx-auto mb-0">
+                  <div class="number-input h-[50px] border-none">
+                    
+                    <input class="quantity bg-light text-sm border-gray-300 border-solid border-1 border-r-0" min="0" placeholder="0" name="quantitée" id="quantity" value="1" type="number">
+
+                    <div class="flex flex-col text-gray-500 ">
+                        <input class="text-base bg-white border-gray-300 border-solid border-1 border-b-0 px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1;" value="+"                                                                                                                                                                          ></input   > 
+                        <input class="h-full leading-[0px] py-0 bg-white border-gray-300 border-solid border-1 text-xl px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) - 1;" value="-"></input > 
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </td>
+        <div class="my-auto row-auto">
+          <Button color='primary' size='lg' radius='sm' client:load><input type="submit" value="J'Achète"></Button>
+        </div>
+
+        </div>
+               
+        </form>
+    </div>
+</div>
+
+
+
+
+<style>
+
+
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.number-input {
+    border: 2px solid #ddd;
+    display: inline-flex;
+}
+
+.number-input,
+.number-input * {
+    box-sizing: border-box;
+}
+
+.number-input button {
+    outline:none;
+    -webkit-appearance: none;
+    background-color: #eeeeee;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    cursor: pointer;
+    margin: 0;
+    position: relative;
+    padding:0;
+}
+
+.number-input button:before,
+.number-input button:after {
+    display: inline-block;
+    position: absolute;
+    content: '';
+    width: 0.5rem;
+    height: 2px;
+    background-color: #212121;
+    transform: translate(-50%, -50%);
+}
+.number-input button.plus:after {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.number-input input[type=number] {
+    font-family: sans-serif;
+    max-width: 4.5rem;
+    padding: .5rem;
+    text-align: center;
+    outline:none;
+}
+
+
+</style>
