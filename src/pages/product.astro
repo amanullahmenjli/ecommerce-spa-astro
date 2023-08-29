@@ -3,15 +3,8 @@ const title: String = 'Title'
 import '../styles/main.css'
 import { ViewTransitions } from 'astro:transitions';
 import Footer from '../components/Footer.astro'
-import { Image } from 'astro:assets'
-import Logo from '~/assets/images/Logo.jpg'
-import DashedMessage from '../components/messages/DashedMessage.astro'
-import FlipCountdownTimer from '../components/countdown_timer/FlipCountdownTimer'
-import BouncingMessage from '../components/messages/BouncingMessage.astro'
-import CardMessage from '../components/messages/CardMessage.astro'
-import ProductDetails from '../components/ProductDetails.astro';
+import ProductDetails from '../components/product_details/ProductDetails.astro';
 import jarraya from '../assets/images/jarraya.png'
-
 ---
 
 <!DOCTYPE html>
@@ -26,12 +19,12 @@ import jarraya from '../assets/images/jarraya.png'
 
     
     <body
-        class="relative bg-[url('~/assets/images/big-bg.png')] bg-top bg-cover bg-fixed bg-no-repeat gap-3 flex flex-col h-screen"
+        class="relative bg-[url('~/assets/images/big-bg.png')] bg-top bg-cover bg-fixed bg-no-repeat gap-3 flex flex-col h-screen "
     >
     
 
 
-<ProductDetails  image={jarraya} price="105" old_price="130" ></ProductDetails>
+<ProductDetails name="Matelas En Mousse 1 Place 5 étoiles"  image={jarraya} price="105" old_price="130" ></ProductDetails>
         <Footer />
     </body>
 

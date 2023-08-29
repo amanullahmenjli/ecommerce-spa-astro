@@ -1,11 +1,12 @@
----
 import { RadioGroup } from "@nextui-org/react";
-import RadioButton from "./product_details/RadioButton";
----
+import RadioButton from "./RadioButton";
 
 
 
-<RadioGroup name="Taille" orientation="horizontal">
+
+function ProductSizes() {
+  return (
+      <RadioGroup name="Taille" orientation="horizontal" isRequired>
         <RadioButton name="Taille" value="190x65" >
           190x65
         </RadioButton>
@@ -21,4 +22,14 @@ import RadioButton from "./product_details/RadioButton";
         <RadioButton name="Taille" value="190x90">
           190x90
         </RadioButton>
-</RadioGroup>
+      </RadioGroup>
+
+      
+
+
+
+     
+  );
+};
+
+export default ProductSizes;

@@ -71,7 +71,7 @@ interface FormProps {
   old_pricee: string;
 }
 
-const Form: React.FC<FormProps> = ({ price, old_pricee }) => {
+function ProductSizes() {
   return (
       <RadioGroup
         name="Taille"
@@ -104,4 +104,4 @@ const Form: React.FC<FormProps> = ({ price, old_pricee }) => {
   );
 };
 
-export default Form;
+export default ProductSizes;

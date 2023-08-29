@@ -1,0 +1,85 @@
+<td class="row-auto">
+    <div class="form-row justify-content-center">
+      <div class="form-group mb-0">
+        <div class="input-group mx-auto mb-0">
+          <div class="number-input h-[50px] border-none">
+            
+            <input class="quantity bg-light text-sm border-gray-300 border-solid border-1 border-r-0" min="0" placeholder="0" name="quantitée" id="quantity" value="1" type="number">
+
+            <div class="flex flex-col text-gray-500 ">
+                <input class="text-base bg-white border-gray-300 border-solid border-1 border-b-0 px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1;"   value="+"                                                                                                                                                                           ></input   > 
+                <input class="h-full leading-[0px] py-0 bg-white border-gray-300 border-solid border-1 text-xl px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) - 1;" value="-"></input > 
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+</td>
+
+
+
+
+
+<style>
+
+
+
+    input[type="number"] {
+        -webkit-appearance: textfield;
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+    
+    input[type=number]::-webkit-inner-spin-button,
+    input[type=number]::-webkit-outer-spin-button {
+        -webkit-appearance: none;
+    }
+    
+    .number-input {
+        border: 2px solid #ddd;
+        display: inline-flex;
+    }
+    
+    .number-input,
+    .number-input * {
+        box-sizing: border-box;
+    }
+    
+    .number-input button {
+        outline:none;
+        -webkit-appearance: none;
+        background-color: #eeeeee;
+        border: none;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        cursor: pointer;
+        margin: 0;
+        position: relative;
+        padding:0;
+    }
+    
+    .number-input button:before,
+    .number-input button:after {
+        display: inline-block;
+        position: absolute;
+        content: '';
+        width: 0.5rem;
+        height: 2px;
+        background-color: #212121;
+        transform: translate(-50%, -50%);
+    }
+    .number-input button.plus:after {
+        transform: translate(-50%, -50%) rotate(90deg);
+    }
+    
+    .number-input input[type=number] {
+        font-family: sans-serif;
+        max-width: 4.5rem;
+        padding: .5rem;
+        text-align: center;
+        outline:none;
+    }
+    
+    
+</style>

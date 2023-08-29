@@ -1,0 +1,15 @@
+---
+import { Input } from "@nextui-org/react";
+const  { name } = Astro.props;
+---
+
+<Input client:load size='sm'
+       label={name}
+       name={name}
+       isRequired
+       variant='bordered'
+       color="primary" 
+       radius='sm'  
+       className="bg-white text-black rounded-lg"
+       classNames={{label: "text-black"}}>
+</Input>
