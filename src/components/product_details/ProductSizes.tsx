@@ -6,7 +6,7 @@ import RadioButton from "./RadioButton";
 
 function ProductSizes() {
   return (
-      <RadioGroup name="Taille" orientation="horizontal" isRequired>
+      <RadioGroup name="Taille" orientation="horizontal">
         <RadioButton name="Taille" value="190x65" >
           190x65
         </RadioButton>
