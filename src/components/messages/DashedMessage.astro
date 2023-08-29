@@ -1,10 +1,12 @@
 ---
+import { Image } from "astro:assets";
 const { message, dir } = Astro.props
+import Badges from '../../assets/images/Badges.png'
 ---
 
 <div
     id="container"
-    class="border-dashed border-4 border-black w-full sm:w-[700px] pr-[10px] pl-[5px] leading-0 md:py-2 md:pl-1 justify-self-center mx-auto"
+    class="border-dashed border-4 border-black w-full sm:w-[700px] pr-[10px] pl-[5px] leading-0 md:py-2 md:pl-1 justify-self-center mx-auto flex flex-col gap-1"
 >
     <h1
         lang="ar"
@@ -14,4 +16,8 @@ const { message, dir } = Astro.props
     >
         {message}
     </h1>
-</div>
+    <img
+    src={Badges.src}
+    alt={'badges'}
+    class="h-24 mx-auto"
+/></div>
