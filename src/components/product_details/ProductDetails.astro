@@ -20,13 +20,15 @@ if (old_price == '') {
 <!-- Product Details Card -->
 <div class="flex flex-row flex-wrap w-full p-[32px] gap-[32px]  justify-center items-center">
   <!-- The Product Picture -->
+  
+
   <ProductImageDetails image={image} class="w-full h-auto "/>
 
   <!-- * Product Details -->
   <!-- * Column Layout -->
   <div class="flex flex-col gap-[16px]">
     <!-- * Product Name -->
-    <h1 class="text-xl font-semibold">{ name }</h1>
+    <h1 class="text-xl font-semibold text-black">{ name }</h1>
 
     <!-- * Product Description -->
     <div class="font-normal text-sm max-w-[65ch]  text-[#848484]">
@@ -51,13 +53,13 @@ if (old_price == '') {
 
       <!-- * Product Size -->
       <div>
-        <h2 class="font-semibold">Choisir une Option:</h2>
+        <h2 class="font-semibold text-black">Choisir une Option:</h2>
         <ProductSizes client:load></ProductSizes>
       </div>
 
       <!-- * Client Info -->
       <div>
-        <h2 class="font-semibold">Insérez votre Informations:</h2>
+        <h2 class="font-semibold text-black">Insérez votre Informations:</h2>
         <ClientsInfo />
       </div>
 
