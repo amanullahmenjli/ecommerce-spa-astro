@@ -1,6 +1,7 @@
 ---
 // Import necessary modules and assets
 import { Image } from 'astro:assets'
+import cornerso from '~/assets/images/cornerso.svg'
 import corners1 from '~/assets/images/corners1.svg'
 import corners2 from '~/assets/images/corners2.svg'
 import Stars from './Stars.jsx'
@@ -8,11 +9,13 @@ import Stars from './Stars.jsx'
 // Destructure props
 const { image, places } = Astro.props
 
-let Corners = corners1
+let Corners = cornerso
 
-if (places == "2"){
+if (places == "1"){
+    Corners = corners1;
+} else if (places == "2"){
     Corners = corners2;
-}
+} 
 ---
 
 <div id="Image" class="as relative box-content">
