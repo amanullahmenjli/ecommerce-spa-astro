@@ -29,9 +29,9 @@
 </div>
 
 
-<script>
-  // Function to set or get the marked time in local storage
-function markedTime(value?: number) {
+<script is:inline>
+// Function to set or get the marked time in local storage
+function markedTime(value) {
   const key = 'markedTime';
   if (value !== undefined) {
     localStorage.setItem(key, value.toString());
@@ -46,10 +46,10 @@ function calculateNextWeekTimestamp() {
   return currentDate.getTime();
 }
 
-window.onload = function() {
-    let targetTime = markedTime();
+window.onload = function () {
+  let targetTime = markedTime();
 
-    // Check if the marked time exists
+  // Check if the marked time exists
   if (!targetTime) {
     // If not, calculate the timestamp for 7 days from now
     targetTime = calculateNextWeekTimestamp();
@@ -72,16 +72,16 @@ window.onload = function() {
     const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
 
-    daysElement!.setAttribute('style', '--value:' + days.toString());
-    hoursElement!.setAttribute('style', '--value:' + hours.toString());
-    minutesElement!.setAttribute('style', '--value:' + minutes.toString());
-    secondsElement!.setAttribute('style', '--value:' + seconds.toString());
+    daysElement.setAttribute('style', '--value:' + days.toString());
+    hoursElement.setAttribute('style', '--value:' + hours.toString());
+    minutesElement.setAttribute('style', '--value:' + minutes.toString());
+    secondsElement.setAttribute('style', '--value:' + seconds.toString());
   }
   // Update the countdown display immediately
   updateCountdownDisplay();
 
   // Update the countdown display every second
   setInterval(updateCountdownDisplay, 1000);
-  
-  };
+
+};
 </script>
