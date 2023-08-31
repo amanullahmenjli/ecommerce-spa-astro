@@ -2,6 +2,18 @@
 import { Image } from "astro:assets";
 const { message, dir } = Astro.props
 import Badges from '../../assets/images/Badges.png'
+
+interface ImageProps {
+  src: string;
+  alt: string;
+  class: string;
+}
+
+const imageProps: ImageProps = {
+    src: Badges.src,
+    alt: 'badges',
+    class: 'h-24 mx-auto',
+  };
 ---
 
 <div
@@ -16,11 +28,8 @@ import Badges from '../../assets/images/Badges.png'
     >
         {message}
     </h1>
-    <img
-    src={Badges.src}
-    alt={'badges'}
-    class="h-24 mx-auto"
-/></div>
+    <Image src={Badges} alt="badges" class="h-24 w-fit mx-auto" />
+</div>
 
 
 <style>
