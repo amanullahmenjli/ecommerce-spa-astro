@@ -1,81 +1,87 @@
----
-import FlipCard from './FlipCard'
-import './styles.css'
-
----
-<script>
-    import { onMount, onDestroy } from 'svelte';
-
-    let remainingTime = {
-        days: 7,
-        hours: 0,
-        minutes: 0,
-        seconds: 0,
-    };
-
-    let animationFrame: any = null;
-
-    const calculateRemainingTime = () => {
-        const currentDate = new Date();
-        const nextSunday = new Date(
-            currentDate.getFullYear(),
-            currentDate.getMonth(),
-            currentDate.getDate() + (7 - currentDate.getDay())
-        );
-        const timeDifference = nextSunday.getTime() - currentDate.getTime();
-
-        const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
-        const hours = Math.floor(
-            (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-        );
-        const minutes = Math.floor(
-            (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
-        );
-        const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
-
-        return { days, hours, minutes, seconds };
-    };
-
-    onMount(() => {
-        const updateCounter = () => {
-            remainingTime = calculateRemainingTime();
-
-            animationFrame = requestAnimationFrame(updateCounter);
-        };
-
-        animationFrame = requestAnimationFrame(updateCounter);
-    });
-
-    onDestroy(() => {
-        if (animationFrame) {
-            cancelAnimationFrame(animationFrame);
-        }
-    });
-</script>
-
-<div class="container mx-auto">
-    <div class="container-segment">
-        <div class="segment">
-            <FlipCard type="days-ones" content={remainingTime.days} />
-        </div>
-        <span class="segment-title text-xs md:text-lg">Jours</span>
-    </div>
-    <div class="container-segment">
-        <div class="segment">
-            <FlipCard type="hours-ones" content={remainingTime.hours} />
-        </div>
-        <span class="segment-title text-xs md:text-lg">Heures</span>
-    </div>
-    <div class="container-segment">
-        <div class="segment">
-            <FlipCard type="minutes-ones" content={remainingTime.minutes} />
-        </div>
-        <span class="segment-title text-xs md:text-lg">Minutes</span>
-    </div>
-    <div class="container-segment">
-        <div class="segment">
-            <FlipCard type="seconds-ones" content={remainingTime.seconds} />
-        </div>
-        <span class="segment-title text-xs md:text-lg">Secondes</span>
+<div class="grid grid-flow-col gap-2 sm:gap-5 text-center font-bold auto-cols-max mx-auto ">
+    <div class="flex flex-col p-2 justify-center bg-primary rounded-md text-[#eee] w-16 h-20 sm:w-24 sm:h-28">
+      <span class="countdown font-mono m-auto text-center text-4xl sm:text-5xl">
+        <span id="days" style="--value:7;"></span>
+      </span>
+      <span class="text-xs sm:text-lg">Jours</span>
+    </div> 
+    <div class="flex flex-col p-2 justify-center bg-primary rounded-md text-[#eee]  w-16 h-20 sm:w-24 sm:h-28">
+      <span class="countdown font-mono   m-auto text-center  text-4xl sm:text-5xl">
+        <span id="hours" style="--value:0;"></span>
+      </span>
+      <span class="text-xs sm:text-lg">Heures</span>
+      
+    </div> 
+    <div class="flex flex-col p-2 justify-center bg-primary rounded-md text-[#eee]  w-16 h-20 sm:w-24 sm:h-28">
+      <span class="countdown font-mono m-auto text-center  text-4xl sm:text-5xl">
+        <span id="minutes" style="--value:0;"></span>
+      </span>
+      <span class="text-xs sm:text-lg">Minutes</span>
+      
+    </div> 
+    <div class="flex flex-col p-2 justify-center bg-primary rounded-md text-[#eee]  w-16 h-20 sm:w-24 sm:h-28">
+      <span class="countdown font-mono   m-auto text-center  text-4xl sm:text-5xl">
+        <span id="seconds" style="--value:0;"></span>
+      </span>
+      <span class="text-xs sm:text-lg">Secondes</span>
+      
     </div>
 </div>
+
+
+<script>
+  // Function to set or get the marked time in local storage
+function markedTime(value?: number) {
+  const key = 'markedTime';
+  if (value !== undefined) {
+    localStorage.setItem(key, value.toString());
+  }
+  return parseInt(localStorage.getItem(key) || '0');
+}
+
+// Function to calculate the timestamp of after 7 days
+function calculateNextWeekTimestamp() {
+  const currentDate = new Date();
+  currentDate.setDate(currentDate.getDate() + 7);
+  return currentDate.getTime();
+}
+
+window.onload = function() {
+    let targetTime = markedTime();
+
+    // Check if the marked time exists
+  if (!targetTime) {
+    // If not, calculate the timestamp for 7 days from now
+    targetTime = calculateNextWeekTimestamp();
+    markedTime(targetTime); // Mark the new timestamp
+  }
+
+  // Get the countdown elements
+  const daysElement = document.getElementById('days');
+  const hoursElement = document.getElementById('hours');
+  const minutesElement = document.getElementById('minutes');
+  const secondsElement = document.getElementById('seconds');
+
+  // Function to update the countdown display
+  function updateCountdownDisplay() {
+    const currentTime = new Date().getTime();
+    const timeDifference = targetTime - currentTime;
+
+    const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+    daysElement!.setAttribute('style', '--value:' + days.toString());
+    hoursElement!.setAttribute('style', '--value:' + hours.toString());
+    minutesElement!.setAttribute('style', '--value:' + minutes.toString());
+    secondsElement!.setAttribute('style', '--value:' + seconds.toString());
+  }
+  // Update the countdown display immediately
+  updateCountdownDisplay();
+
+  // Update the countdown display every second
+  setInterval(updateCountdownDisplay, 1000);
+  
+  };
+</script>

@@ -1,6 +1,6 @@
 ---
 import ProductImageA from './ProductImageA.astro'
-const { image, name, price, old_price, places, score } = Astro.props
+const { image, name, price, old_price, places } = Astro.props
 
 let old_pricee
 
@@ -9,13 +9,12 @@ if (old_price == '' || old_price == null || old_price == undefined) {
 } else {
     old_pricee = old_price + ' DT'
 }
-
 ---
 
 <div
     class="flex flex-col gap-[10px] pb-[10px] max-w-[285px] sm:min-w-[138px] sm:max-w-[163px] md:w-[223px] lg:w-[283px] mb-[15px]"
 >
-    <ProductImageA image={image} places={places} />
+<a href="product"><ProductImageA image={image} places={places} /></a>
     <div class="justify-center flex pb-[10px] border-b-[1px] border-[#7B7B7B]">
         <a href="product"><div class="text-center px-[10px] py-[5px] bg-[#E60D54]">
             <div
@@ -27,11 +26,11 @@ if (old_price == '' || old_price == null || old_price == undefined) {
         </div></a>
     </div>
     <div class="flex flex-col gap-[10px] justify-center">
-        <p
+        <a href="product"><p
             class="font-semibold text-[14px] leading-[18px] tracking-[0.2px] text-[#202020] text-center"
         >
             {name}
-        </p>
+        </p></a>
 
         <div class="flex flex-col gap-[10px] text-center m-auto">
             <div class="flex flex-col gap-[10px] text-center m-auto">

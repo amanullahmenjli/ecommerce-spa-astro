@@ -4,7 +4,7 @@ const { message, dir } = Astro.props
 
 <div
     id="container"
-    class="px-[30px] py-2 md:pb-3 md:pt-2 bg-[#E60D54] text-white w-fit mx-auto"
+    class="px-[30px] py-2 md:pb-3 md:pt-2 bg-blue-500 text-white w-fit mx-auto"
 >
     <h1
         lang="ar"
@@ -17,26 +17,7 @@ const { message, dir } = Astro.props
 </div>
 
 <style>
-    .fadeInOut {
-        animation: fadeInOut 2s infinite;
-    }
-    /* animations.module.css */
-    .fade-enter-active,
-    .fade-leave-active {
-        transition: opacity 0.5s;
-    }
-    .fade-enter,
-    .fade-leave-to {
-        opacity: 0;
-    }
-
-    @keyframes fadeInOut {
-        0%,
-        100% {
-            opacity: 0;
-        }
-        50% {
-            opacity: 1;
-        }
+    * {
+        font-family: 'TheSans';
     }
 </style>
