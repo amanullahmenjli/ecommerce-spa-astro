@@ -1,23 +1,46 @@
 ---
+// Import necessary modules and assets
 import { Image } from 'astro:assets'
-import Corners from '~/assets/images/Corners.svg'
-import Stars from './Stars.jsx'
-const { image, score } = Astro.props
+import cornerso from '~/assets/images/cornerso.svg'
+import corners1 from '~/assets/images/corners1.svg'
+import corners2 from '~/assets/images/corners2.svg'
+
+// Destructure props
+const { image, places } = Astro.props
+
+let Corners = cornerso
+
+if (places == "1"){
+    Corners = corners1;
+} else if (places == "2"){
+    Corners = corners2;
+} 
 ---
 
-<div id="Image" class="max-w-[180px] h-full relative">
+<div id="Image" class="as relative box-content">
+    {/* Display the main image */}
     <Image
         src={image}
-        width={300}
         alt={'jarraya'}
         id="pic"
-        class="border-solid border-[0.5px] border-black border-opacity-50 w-full"
+        class="as border-solid border-[0.5px] border-black border-opacity-50 w-full"
     />
+    {/* Display the Corners image */}
     <img
         src={Corners.src}
         width={Corners.width}
         height={Corners.height}
         id="Corners"
-        class="absolute top-0 w-full"
+        class="absolute as top-0 w-full"
     />
 </div>
+
+<style>
+    /* Styling for the component */
+    .as {
+        aspect-ratio: auto 380 / 434; /* Maintain the specified aspect ratio */
+        max-width: 285px; /* Set a maximum width for the component */
+        flex: 0 1 auto; /* flex-grow, flex-shrink, flex-basis */
+        min-width: 0; /* Allow content to shrink past its original width */
+    }
+</style>

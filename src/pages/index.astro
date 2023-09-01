@@ -1,15 +1,13 @@
 ---
 const title: String = 'Title'
-import '../styles/main.css'
 import { ViewTransitions } from 'astro:transitions';
-import Footer from '../components/Footer.astro'
-import Header from '../components/Header.astro'
-import ProductsSection from '../components/ProductsSection.astro'
+import Footer from '../layouts/Footer.astro'
+import Header from '../layouts/Header.astro'
+import ProductsSection from '../layouts/ProductsSection.astro'
 import { Image } from 'astro:assets'
 import Logo from '~/assets/images/Logo.jpg'
 import DashedMessage from '../components/messages/DashedMessage.astro'
-import FlipCountdownTimer from '../components/countdown_timer/FlipCountdownTimer'
-import FlipCountdownTimer1 from '../components/countdown_timer/FlipCountdownTimer.astro'
+import FlipCountdownTimer from '../components/countdown_timer/CountdownTimer.astro'
 import BouncingMessage from '../components/messages/BouncingMessage.astro'
 import CardMessage from '../components/messages/CardMessage.astro'
 ---
@@ -33,7 +31,7 @@ import CardMessage from '../components/messages/CardMessage.astro'
             
             <DashedMessage message="إشري بأفضل الأسعار في تونس" dir="rtl" />
 
-            <FlipCountdownTimer1 />
+            <FlipCountdownTimer />
 
             <BouncingMessage
                 message="عدي كوموند و التوصيل لباب الدار، و الدفع عند الاستلام"
@@ -59,4 +57,11 @@ import CardMessage from '../components/messages/CardMessage.astro'
         font-family: 'Roboto';
         color: black;
     }
+    @font-face {
+    font-family: 'TheSans';
+    src: url('/fonts/TheSans-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+
 </style>
