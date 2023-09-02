@@ -1,9 +1,8 @@
 ---
 const title: String = 'Title'
-import { ViewTransitions } from 'astro:transitions';
 import Footer from '../layouts/Footer.astro'
 import ProductDetails from '../components/product_details/ProductDetails.astro';
-import jarraya from '../assets/images/jarraya.png'
+import jarraya from '../assets/images/orthomed1.png'
 ---
 
 <!DOCTYPE html>
@@ -12,7 +11,6 @@ import jarraya from '../assets/images/jarraya.png'
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
-        <ViewTransitions />
 
     </head>
 
@@ -23,7 +21,8 @@ import jarraya from '../assets/images/jarraya.png'
     
 <div class="px-1 py-3 bg-[#E60D54] text-white w-20 text-center m-2"><a href="/">Retour</a></div>
 
-<ProductDetails name="Matelas En Mousse 1 Place 5 étoiles"  image={jarraya} price="105" old_price="130" ></ProductDetails>
+
+<ProductDetails name="Matelas En Mousse 1 Place 5 étoiles"  image={jarraya.src} price="105" old_price="130" ></ProductDetails>
         <Footer />
     </body>
 
@@ -40,3 +39,4 @@ import jarraya from '../assets/images/jarraya.png'
         font-family: 'Roboto';
     }
 </style>
+../components/product_details/ImageGallery.tsx

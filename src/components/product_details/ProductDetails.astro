@@ -1,9 +1,9 @@
 ---
 import ClientsInfo from './ClientsInfoInput.astro'
 import ProductSizes from './ProductSizes'
-import ProductImageDetails from './ProductImageDetails.astro'
 import Quantity from './Quantity.astro'
 import { Button } from '@nextui-org/react'
+import ImageGallery from './ImageGallery'
 const { image, name, price, old_price, link, score } = Astro.props
 
 
@@ -22,7 +22,8 @@ if (old_price == '') {
   <!-- The Product Picture -->
   
 
-  <ProductImageDetails image={image} class="w-full h-auto "/>
+  <ImageGallery client:only="react" image={image} hasBonus></ImageGallery>
+
 
   <!-- * Product Details -->
   <!-- * Column Layout -->

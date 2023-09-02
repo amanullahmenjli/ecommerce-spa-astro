@@ -7,7 +7,7 @@ import Corners from '~/assets/images/Corners.svg'
 const { image } = Astro.props
 ---
 
-<div id="Image" class="as relative box-content">
+<div id="Image" class="as relative box-content" transition:name="pic" transition:animate="slide">
     {/* Display the main image */}
     <Image
         src={image}
@@ -15,14 +15,7 @@ const { image } = Astro.props
         id="pic"
         class="as border-solid border-[0.5px] border-black border-opacity-50 w-full max-w-[460px]"
     />
-    {/* Display the Corners image */}
-    <img
-        src={Corners.src}
-        width={Corners.width}
-        height={Corners.height}
-        id="Corners"
-        class="absolute as top-0 w-full max-w-[460px]"
-    />
+
 </div>
 
 <style>

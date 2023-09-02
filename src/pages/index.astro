@@ -1,8 +1,6 @@
 ---
 const title: String = 'Title'
-import { ViewTransitions } from 'astro:transitions';
 import Footer from '../layouts/Footer.astro'
-import Header from '../layouts/Header.astro'
 import ProductsSection from '../layouts/ProductsSection.astro'
 import { Image } from 'astro:assets'
 import Logo from '~/assets/images/Logo.jpg'
@@ -10,6 +8,8 @@ import DashedMessage from '../components/messages/DashedMessage.astro'
 import FlipCountdownTimer from '../components/countdown_timer/CountdownTimer.astro'
 import BouncingMessage from '../components/messages/BouncingMessage.astro'
 import CardMessage from '../components/messages/CardMessage.astro'
+
+
 ---
 
 <!DOCTYPE html>
@@ -18,7 +18,6 @@ import CardMessage from '../components/messages/CardMessage.astro'
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>{title}</title>
-        <ViewTransitions />
     </head>
 
     

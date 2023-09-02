@@ -7,7 +7,7 @@
             <input class="quantity bg-light text-sm border-gray-300 border-solid border-1 border-r-0" min="0" placeholder="0" name="quantitée" id="quantity" value="1" type="number">
 
             <div class="flex flex-col text-gray-500 ">
-                <input class="text-base bg-white border-gray-300 border-solid border-1 border-b-0 px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1;"   value="+"                                                                                                                                                                           ></input   > 
+                <input class="text-base bg-white border-gray-300 border-solid border-1 border-b-0 px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1;"    value="+"                                                                                                                                                                           ></input   > 
                 <input class="h-full leading-[0px] py-0 bg-white border-gray-300 border-solid border-1 text-xl px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) - 1;" value="-"></input > 
             </div>
           </div>
@@ -22,7 +22,9 @@
 
 <style>
 
-
+    *{
+        color: #000;
+    }
 
     input[type="number"] {
         -webkit-appearance: textfield;
