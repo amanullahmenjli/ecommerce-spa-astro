@@ -1,17 +1,15 @@
 ---
 import ProductImage from './ProductImage.astro'
-const { image, name, pricee } = Astro.props
+const { image, name, pricee, linkw } = Astro.props
 
-
-console.log(pricee)
 ---
 
 <div
     class="flex flex-col gap-[10px] pb-[10px] max-w-[285px] sm:min-w-[138px] sm:max-w-[163px] md:w-[223px] lg:w-[283px] mb-[15px]"
 >
-<a href="product"><ProductImage image={image}></a>
+<a href={linkw}><ProductImage image={image}></a>
     <div class="justify-center flex pb-[10px] border-b-[1px] border-[#7B7B7B]">
-        <a href="product"><div class="text-center px-[10px] py-[5px] bg-[#E60D54]">
+        <a href={linkw}><div class="text-center px-[10px] py-[5px] bg-[#E60D54]">
             <div
                 class="text-white text-[12px] leading-[20px] first-letter font-medium tracking-[0.25px]"
                 639px
@@ -21,7 +19,7 @@ console.log(pricee)
         </div></a>
     </div>
     <div class="flex flex-col gap-[10px] justify-center">
-        <a href="product"><p
+        <a href={linkw}><p
             class="font-semibold text-[14px] leading-[18px] tracking-[0.2px] text-[#202020] text-center"
         >
             {name}

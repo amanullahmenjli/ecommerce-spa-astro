@@ -2,7 +2,6 @@
 import ProductCard from '../components/product_card/ProductCard.astro';
 import products from '../data/products'
 
-
 ---
 
 <div class="mx-auto px-[10px]">
@@ -19,7 +18,7 @@ import products from '../data/products'
                   image={product.image}
                   name={product.name}
                   pricee={product.data[0].price} // Assuming you want to use the first price in the data array
-                  link={'/' + product.image} // Replace with the actual link if available
+                  linkw={product.name.replace(/\s+/g, '-').toLowerCase()} // Replace with the actual link if available
                 />
               ))}
     

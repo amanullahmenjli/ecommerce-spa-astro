@@ -1,0 +1,82 @@
+---
+import products from '../data/products'
+
+interface ProductData {
+  size: string;
+  price: string;
+}
+
+interface Product {
+  name: string;
+  image: ImageMetadata;
+  data: ProductData[];
+  description: string;
+}
+
+export function getStaticPaths() {
+  return [
+  products.map((product) => (
+    {
+      params:{product: product.name.replace(/\s+/g, '-').toLowerCase()},
+      props: product
+    }
+  ))
+  ];
+}
+
+const { product } = Astro.params;
+
+const { name, image, data, description } = Astro.props;
+
+
+
+const title = name
+import Footer from '../layouts/Footer.astro'
+import ProductDetails from '../components/product_details/ProductDetails.astro';
+
+
+---
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>{title}</title>
+
+    </head>
+
+    
+    <body class="relative bg-[url('~/assets/images/big-bg.png')] bg-top md:bg-cover md:bg-fixed bg-no-repeat gap-3 flex flex-col h-full m-0">
+    
+      <div class="px-1 py-3 bg-[#E60D54] text-white w-20 text-center m-2">
+        <a href="/" class="w-full h-full">  Retour</a>
+      </div>
+
+
+      <ProductDetails name={name} data={data} image={image.src} description={description} />
+      
+      <Footer />
+    </body>
+
+
+</html>
+
+
+
+
+<style>
+
+   * {
+        font-family: 'Roboto';
+        color: black;
+    }
+    @font-face {
+    font-family: 'Roboto';
+    src: url('/fonts/Roboto-Regular.ttf');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+</style>
