@@ -4,21 +4,14 @@ import ProductSizes from './ProductSizes'
 import Quantity from './Quantity.astro'
 import { Button } from '@nextui-org/react'
 import ImageGallery from './ImageGallery'
-const { image, name, price, old_price, link, score } = Astro.props
+const { image, name, price, link, data } = Astro.props
 
 
 
-let old_pricee: string
-
-if (old_price == '') {
-    old_pricee = ''
-} else {
-    old_pricee = old_price + ' DT'
-}
 ---
 
 <!-- Product Details Card -->
-<div class="flex flex-row flex-wrap w-full p-[32px] gap-[32px]  justify-center items-center">
+<div class="flex flex-row flex-wrap w-full p-[32px] gap-[32px] justify-center items-start">
   <!-- The Product Picture -->
   
 
@@ -27,7 +20,7 @@ if (old_price == '') {
 
   <!-- * Product Details -->
   <!-- * Column Layout -->
-  <div class="flex flex-col gap-[16px]">
+  <div class="flex flex-col gap-[16px] mt-5">
     <!-- * Product Name -->
     <h1 class="text-xl font-semibold text-black">{ name }</h1>
 
@@ -55,7 +48,7 @@ if (old_price == '') {
       <!-- * Product Size -->
       <div>
         <h2 class="font-semibold text-black">Choisir une Option:</h2>
-        <ProductSizes client:load></ProductSizes>
+        <ProductSizes client:load data={data}></ProductSizes>
       </div>
 
       <!-- * Client Info -->
@@ -69,13 +62,13 @@ if (old_price == '') {
         <!-- * Prices -->
         <div class="flex flex-row flex-wrap align-text-bottom items-baseline gap-3">
           <!-- * Current Price -->
-          <p class="font-bold text-[26px] md:text-[36px] text-[#E60D54] ">
-            {price} DT
+          <p class="font-bold text-[26px] md:text-[36px] text-[#E60D54]" id="final_price">
+            {data[0].price} DT
           </p>
 
           <!-- * Old Price -->
-          <p class="font-bold  text-[19px] md:text-[26px]  text-[#7F7F7F] line-through ">
-            {old_pricee}
+          <p class="font-bold  text-[19px] md:text-[26px]  text-[#7F7F7F] line-through" id="old_price">
+            {parseInt(data[0].price) * 2 + ' DT'}
           </p>
         </div>
 
@@ -91,6 +84,7 @@ if (old_price == '') {
 
       </div>
       
+      <input type="hidden" name="" id="initial_price" value={data[0].price}>
 
     </form>
 

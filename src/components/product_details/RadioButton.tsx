@@ -5,9 +5,10 @@ interface CustomRadioProps {
     children: React.ReactNode;
     name: string;
     value: string;
+    price: string
   }
 
-const RadioButton: React.FC<CustomRadioProps> = ({ children, name, value }) => {
+const RadioButton: React.FC<CustomRadioProps> = ({ children, name, value, price }) => {
     return (
       <Radio
         name={name}
@@ -19,6 +20,12 @@ const RadioButton: React.FC<CustomRadioProps> = ({ children, name, value }) => {
           ),
         }}
         value={value}
+        onClick={() => {
+          const q = parseInt(document.getElementById('quantity')!.value);
+          document.getElementById('initial_price')!.value = price;
+          document.getElementById('final_price')!.innerHTML = parseInt(price) * q + ' DT';
+          document.getElementById('old_price')!.innerHTML = parseInt(price) * q * 2 + ' DT';
+        }}
       >
         {children}
       </Radio>

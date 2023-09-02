@@ -1,35 +1,29 @@
 import { RadioGroup } from "@nextui-org/react";
 import RadioButton from "./RadioButton";
 
+interface Data {
+  size: string;
+  price: string;
+}
 
+interface ProductSizesProps {
+  data: Data[]; // Define the 'data' prop here
+}
 
-
-function ProductSizes() {
+function sizeButton(dta:Data) {
   return (
-      <RadioGroup name="Taille" orientation="horizontal">
-        <RadioButton name="Taille" value="190x65" >
-          190x65
-        </RadioButton>
-
-        <RadioButton name="Taille" value="190x70">
-          190x70
-        </RadioButton>
-
-        <RadioButton name="Taille" value="190x80">
-          190x80
-        </RadioButton>
-
-        <RadioButton name="Taille" value="190x90">
-          190x90
-        </RadioButton>
-      </RadioGroup>
-
-      
-
-
-
-     
+    <RadioButton name="Taille" value={dta.size} price={dta.price}>
+        {dta.size}
+    </RadioButton>
   );
-};
+}
+
+function ProductSizes(props: ProductSizesProps) {
+  return (
+    <RadioGroup name="Taille" orientation="horizontal">
+      {props.data.map(sizeButton)}
+    </RadioGroup>
+  );
+}
 
 export default ProductSizes;
