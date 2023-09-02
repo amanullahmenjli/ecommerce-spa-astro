@@ -1,0 +1,37 @@
+---
+import ProductCard from '../components/product_card/ProductCard.astro';
+import products from '../data/products'
+
+
+---
+
+<div class="mx-auto px-[10px]">
+    <h1
+        class="text-center font-normal text-3xl md:font-extrabold md:text-5xl"
+    >
+        Nos produits
+    </h1>
+    <br />
+    <div>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-6">
+            {products.map((product) => (
+                <ProductCard
+                  image={product.image}
+                  name={product.name}
+                  pricee={product.data[0].price} // Assuming you want to use the first price in the data array
+                  link={'/' + product.image} // Replace with the actual link if available
+                />
+              ))}
+    
+        </div>
+
+    </div>
+</div>
+
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Inter&display=block');
+
+    * {
+        font-family: 'Inter';
+    }
+</style>
