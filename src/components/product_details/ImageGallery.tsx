@@ -26,7 +26,7 @@ class DemoCarousel extends Component<DemoCarouselProps> {
         );
 
         const withBonus = (
-            <Carousel width={460} dynamicHeight autoPlay interval={1500} infiniteLoop>
+            <Carousel width={400} dynamicHeight autoPlay interval={1500} infiniteLoop>
                 <div>
                     <img src={image} width={460} alt="Carousel 1" /> {/* Use the 'image' prop */}
                 </div>
