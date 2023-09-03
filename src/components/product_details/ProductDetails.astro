@@ -4,7 +4,7 @@ import ProductSizes from './ProductSizes'
 import Quantity from './Quantity.astro'
 import { Button } from '@nextui-org/react'
 import ImageGallery from './ImageGallery'
-const { image, name, price, link, data } = Astro.props
+const { image, name, description, link, data } = Astro.props
 
 let hasBonus = true;
 
@@ -30,8 +30,7 @@ if (name.includes("Oreiller") || name.includes('mousse')) {
 
     <!-- * Product Description -->
     <div class="font-normal text-sm max-w-[65ch]  text-[#848484]">
-      <p class="mb-4">Ce matelas en mousse de bonne qualité et de <strong>densité moyenne de 20/22</strong> ajoute du confort à votre chambre ou à votre salon. Il est <strong>garantie 5 ans</strong> et <strong>livré à domicile gratuitement</strong> sur toute la Tunisie.</p>
-      <p>Ce matelas est <strong>robuste, solide et ferme</strong>, et offre un excellent soutien et une tenue durable pour une utilisation <strong>jour après jour</strong>. Sa conception en mousse lui rend extrêmement <strong>flexible, léger</strong>.</p>
+      {description}  
     </div>
 
     <!-- * Form -->
