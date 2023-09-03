@@ -58,7 +58,7 @@ class DemoCarousel extends Component<DemoCarouselProps> {
             </Carousel>
         );
 
-        return <div className='max-w-lg'><ImageGallery items={images} thumbnailPosition='left' showFullscreenButton={false} showPlayButton={false}/></div>;
+        return <div className='md:max-w-lg'><ImageGallery items={images} thumbnailPosition='left' showFullscreenButton={false} showPlayButton={false} infinite autoPlay/></div>;
     }
 }
 
