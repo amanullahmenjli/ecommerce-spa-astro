@@ -70,8 +70,8 @@ const products: Product[] = [
     name: "Matelas orthopédique soft plus 7 étoiles 2 places",
     image: soft2, // Corresponding image
     data: [
-      { size: "190/140", price: "350" },
       { size: "190/160", price: "380" },
+      { size: "190/140", price: "350" },
       { size: "200/160", price: "430" },
       { size: "200/180", price: "480" }
     ],
