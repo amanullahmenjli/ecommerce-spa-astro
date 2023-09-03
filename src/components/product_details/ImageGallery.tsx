@@ -3,22 +3,44 @@ import PropTypes from 'prop-types'; // Import PropTypes for prop type checking
 import "react-image-gallery/styles/css/image-gallery.css";
 import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 
+
+
 import { Carousel } from 'react-responsive-carousel';
 import shipping from '../../assets/images/shipping.jpg';
 import bonus from '../../assets/images/bonus.jpg';
 
+import mousse4 from '../../assets/images/mousse42.jpg'
+import mousse5 from '../../assets/images/mousse52.jpg'
+import mousse6 from '../../assets/images/mousse62.png'
+import bébé from '../../assets/images/bébé2.png'
+
 interface DemoCarouselProps {
     image: string; // Define the 'image' prop as a string
-    hasBonus: boolean;
+    namee: string;
 }
 
-const bn = bonus.src;
+
 
 
 
 class DemoCarousel extends Component<DemoCarouselProps> {
     render(): ReactNode {
-        const { image, hasBonus } = this.props; // Get the 'image' prop
+        const { image, namee } = this.props; // Get the 'image' prop
+
+        let bn;
+
+        if (namee.includes("mousse 4")) {
+             bn = mousse4;
+  } else if (namee.includes("mousse 5")) {
+    bn = mousse5;
+  } else if (namee.includes("mousse 6")) {
+    bn = mousse6;
+  }
+  else if (namee.includes("Bébé")) {
+    bn = bébé;
+  } else {
+    bn = bonus;
+  }
 
         const images:ReactImageGalleryItem[] = [
             {
@@ -28,8 +50,8 @@ class DemoCarousel extends Component<DemoCarouselProps> {
                 
               },            
             {
-                original: bn,
-                thumbnail: bn,
+                original: bn.src,
+                thumbnail: bn.src,
               },            
         ]
 
