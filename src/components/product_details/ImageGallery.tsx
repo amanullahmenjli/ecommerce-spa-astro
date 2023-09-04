@@ -13,6 +13,8 @@ import mousse4 from '../../assets/images/mousse42.jpg'
 import mousse5 from '../../assets/images/mousse52.jpg'
 import mousse6 from '../../assets/images/mousse62.png'
 import bébé from '../../assets/images/bébé2.png'
+import oreiller from '../assets/images/or.png';
+
 
 interface DemoCarouselProps {
     image: string; // Define the 'image' prop as a string
@@ -38,7 +40,9 @@ class DemoCarousel extends Component<DemoCarouselProps> {
   }
   else if (namee.includes("Bébé")) {
     bn = bébé;
-  } else {
+  } else if (namee.includes("Oreiller")) {
+    bn = oreiller;
+  }else {
     bn = bonus;
   }
 

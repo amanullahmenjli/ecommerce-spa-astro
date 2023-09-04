@@ -35,14 +35,19 @@ if (name.includes("Oreiller") || name.includes('mousse')) {
 
     <!-- * Form -->
 
-    <form action="https://formsubmit.co/9b509b2ebf1f5f5392e04b6e10c5e07b" method="POST" class="flex flex-col gap-[16px]">
+    <form action="https://formsubmit.co/menjliamanullah@gmail.com" method="POST" class="flex flex-col gap-[16px]" onsubmit="
+    document.getElementById('_subject').value = 'Nouvelle commande #' + Date.now().toString() + ' par ' + document.getElementById('tel').value;
+    alert(document.getElementById('_subject').value)
+    ">
       <!-- * Form Settings -->
         <!-- * Use Table email template -->
         <input type="hidden" name="_template" value="table">
         <!-- * Desable Captcha -->
         <input type="hidden" name="_captcha" value="false">
 
-        <input type="hidden" name="_subject" value="Nouvelle commande par {">
+        <input type="hidden" name="_subject" id="_subject" value="Nouvelle commande">
+
+        <input type="hidden" name="Produit" value={name}>
 
 
 
@@ -88,8 +93,19 @@ if (name.includes("Oreiller") || name.includes('mousse')) {
       </div>
       
       <input type="hidden" name="" id="initial_price" value={data[0].price}>
+      
 
     </form>
 
 
   </div>
+
+
+
+<script>
+  function setSubject() {
+    document.getElementById('_subject').value = 'Nouvelle commande #' + Date.now().toString + ' par ' + document.getElementById('num').value;
+    alert(document.getElementById('_subject').value)
+    return false
+  }
+</script>
