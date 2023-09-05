@@ -8,12 +8,11 @@ import ImageGallery, { ReactImageGalleryItem } from "react-image-gallery";
 import { Carousel } from 'react-responsive-carousel';
 import shipping from '../../assets/images/shipping.jpg';
 import bonus from '../../assets/images/bonus.jpg';
-
+import st from '../../assets/images/or.png'
 import mousse4 from '../../assets/images/mousse42.jpg'
 import mousse5 from '../../assets/images/mousse52.jpg'
 import mousse6 from '../../assets/images/mousse62.png'
 import bébé from '../../assets/images/bébé2.png'
-import oreiller from '../assets/images/or.png';
 
 
 interface DemoCarouselProps {
@@ -41,7 +40,7 @@ class DemoCarousel extends Component<DemoCarouselProps> {
   else if (namee.includes("Bébé")) {
     bn = bébé;
   } else if (namee.includes("Oreiller")) {
-    bn = oreiller;
+    bn = st;
   }else {
     bn = bonus;
   }
