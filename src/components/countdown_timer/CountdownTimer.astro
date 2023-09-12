@@ -50,7 +50,7 @@ window.onload = function () {
   let targetTime = markedTime();
 
   // Check if the marked time exists
-  if (!targetTime) {
+  if (!targetTime || targetTime < Date.now()) {
     // If not, calculate the timestamp for 7 days from now
     targetTime = calculateNextWeekTimestamp();
     markedTime(targetTime); // Mark the new timestamp

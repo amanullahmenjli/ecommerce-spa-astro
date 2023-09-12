@@ -140,7 +140,7 @@ const products: Product[] = [
   // Matelas orthomédical category
   {
     name: "Matelas orthomédical 11 étoiles 2 places",
-    image: venise, // Corresponding image
+    image: orthomed2, // Corresponding image
     data:[
       { size:"190/160", price:"699" },
       { size:"190/140", price:"649" },
