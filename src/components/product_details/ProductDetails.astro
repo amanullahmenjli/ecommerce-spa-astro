@@ -35,17 +35,14 @@ if (name.includes("Oreiller") || name.includes('mousse')) {
 
     <!-- * Form -->
 
-    <form action="https://formsubmit.io/send/291f35b7-54e6-471c-936e-aab4bbf7f814" method="POST" class="flex flex-col gap-[16px]" onsubmit="
-    document.getElementById('_subject').value = 'Nouvelle commande #' + Date.now().toString() + ' par ' + document.getElementById('tel').value;
-    alert(document.getElementById('_subject').value)
-    ">
+    <form name="contact" method="POST" data-netlify="true" class="flex flex-col gap-[16px]">
       <!-- * Form Settings -->
         <!-- * Use Table email template -->
         <!-- <input type="hidden" name="_template" value="table">
         <!-- * Desable Captcha -->
         <!-- <input type="hidden" name="_captcha" value="false"> -->
 
-        <!-- <input type="hidden" name="_subject" id="_subject" value="Nouvelle commande"> --> -->
+        <!-- <input type="hidden" name="_subject" id="_subject" value="Nouvelle commande"> -->
 
         <input type="hidden" name="Produit" value={name}>
 
