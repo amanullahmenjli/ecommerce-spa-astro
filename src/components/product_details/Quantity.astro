@@ -4,7 +4,7 @@
         <div class="input-group mx-auto mb-0">
           <div class="number-input h-[50px] border-none">
             
-            <input class="quantity bg-light text-sm border-gray-300 border-solid border-1 border-r-0" min="0" placeholder="0" name="quantitée" id="quantity" value="1" type="number">
+            <input class="quantity bg-light text-sm border-gray-300 border-solid border-1 border-r-0" min="0" placeholder="0" name="Quantité" id="quantity" value="1" type="number">
 
             <div class="flex flex-col text-gray-500 ">
                 <input class="text-base bg-white border-gray-300 border-solid border-1 border-b-0 px-2 cursor-pointer" type='button' onclick="document.getElementById('quantity').value = parseInt(document.getElementById('quantity').value) + 1; document.getElementById('-').disabled = false; document.getElementById('final_price').innerHTML = parseInt(document.getElementById('initial_price').value) * parseInt(document.getElementById('quantity').value) + ' DT'; document.getElementById('old_price').innerHTML = parseInt(document.getElementById('initial_price').value) * 2 * parseInt(document.getElementById('quantity').value) + ' DT' "      value="+" id="+"></input   > 

@@ -2,25 +2,15 @@
 import ClientsInfo from './ClientsInfoInput.astro'
 import ProductSizes from './ProductSizes'
 import Quantity from './Quantity.astro'
-import { Button } from '@nextui-org/react'
 import ImageGallery from './ImageGallery'
-const { image, name, description, link, data } = Astro.props
-
-let hasBonus = true;
-
-if (name.includes("Oreiller") || name.includes('mousse')) {
-  hasBonus = false;
-}
-
+import circle from '~/assets/images/circle.svg'
+const { image, name, description, data } = Astro.props
 ---
 
 <!-- Product Details Card -->
 <div class="flex flex-row flex-wrap w-full px-2 gap-[32px] justify-center items-start">
-  <!-- The Product Picture -->
-  
-
+  <!-- * The Product's Images Gallery -->
   <ImageGallery client:only="react" image={image} namee={name}></ImageGallery>
-
 
   <!-- * Product Details -->
   <!-- * Column Layout -->
@@ -35,20 +25,10 @@ if (name.includes("Oreiller") || name.includes('mousse')) {
 
     <!-- * Form -->
 
-    <form name="contact" method="POST" data-netlify="true" class="flex flex-col gap-[16px]">
-      <!-- * Form Settings -->
-        <!-- * Use Table email template -->
-        <!-- <input type="hidden" name="_template" value="table">
-        <!-- * Desable Captcha -->
-        <!-- <input type="hidden" name="_captcha" value="false"> -->
+    <form id="commande" class="flex flex-col gap-[16px]">
 
-        <!-- <input type="hidden" name="_subject" id="_subject" value="Nouvelle commande"> -->
-
-        <input type="hidden" name="Produit" value={name}>
-
-
-
-
+      <!-- * Product Name -->
+      <input type="hidden" name="Produit" value={name}>
 
       <!-- * Product Size -->
       <div>
@@ -82,27 +62,75 @@ if (name.includes("Oreiller") || name.includes('mousse')) {
 
         <!-- * Submit Button -->
         <div class="my-auto row-auto">
-          <Button color='primary' size='lg' radius='sm' client:load>
-            <input type="submit" value="J'Achète">
-          </Button>
+          <input type="submit" value="J'Achète"  class="bg-primary text-white cursor-pointer btn-md rounded-md text-base">
         </div>
 
       </div>
-      
-      <input type="hidden" name="" id="initial_price" value={data[0].price}>
-      
-
     </form>
+    <dialog id="sucess" class="modal m-8">
+      <div class="modal-box max-w-[415px] p-0 bg-[#EDF2FF]">
+        <!-- * Close button -->
+        <form method="dialog">
+          <button class="btn btn-square btn-sm rounded-md btn-ghost absolute right-2 top-2">✕</button>
+        </form>
+
+        <div class="my-[75px] gap-[25px] flex flex-col justify-center">
+          <img src={circle.src} alt="" width="122px" class="m-auto">
+          <h1 class="w-[180px] text-4xl text-center m-auto font-semibold">Commande confirmé!</h1>
+
+          
+        </div>
+
+        <form method="dialog" class="px-8 pb-8 pt-0">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn w-full">Close</button>
+        </form>
+ 
+        
+    </dialog>
+</div>
 
 
-  </div>
 
 
+<script is:inline src="https://unpkg.com/@supabase/supabase-js"></script>
 
-<script>
-  function setSubject() {
-    document.getElementById('_subject').value = 'Nouvelle commande #' + Date.now().toString + ' par ' + document.getElementById('num').value;
-    alert(document.getElementById('_subject').value)
-    return false
-  }
+
+<script is:inline>
+  // Create the supabase client
+  const { createClient } = supabase
+  const supbase = createClient('https://koduxbamyurvkylcdimi.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImtvZHV4YmFteXVydmt5bGNkaW1pIiwicm9sZSI6ImFub24iLCJpYXQiOjE2OTQ4NTY1NDQsImV4cCI6MjAxMDQzMjU0NH0.nbdnv9dkqZyg29T6y4J9LPOGXPXQgslIfQYoCrcYFaY')
+
+  const form = document.getElementById('commande')
+
+  form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+
+          const formInputs = form.querySelectorAll('input')
+
+          let submision = {}
+
+          formInputs.forEach(element => {
+            const { value, name } = element
+            if (value && name) {
+                if (name == 'Quantité'){
+                  submision[name] = parseInt(value)
+                } else {
+                  submision[name] = value
+                }
+                // console.log(name)
+            }
+          })
+
+          const { error } = await supbase.from('Commandes').insert([submision], { returning: 'minimal'}).select()
+
+          if (error) {
+              console.log(error)
+          } else {
+            sucess.showModal()
+            form.reset()
+          }
+          
+          console.log(submision)
+      })
 </script>
