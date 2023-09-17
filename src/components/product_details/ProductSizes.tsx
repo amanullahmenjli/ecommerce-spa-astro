@@ -1,5 +1,5 @@
-import { RadioGroup } from "@nextui-org/react";
-import RadioButton from "./RadioButton";
+import React, { useState } from 'react';
+import RadioButton from './RadioButton';
 
 interface Data {
   size: string;
@@ -7,22 +7,31 @@ interface Data {
 }
 
 interface ProductSizesProps {
-  data: Data[]; // Define the 'data' prop here
-}
-
-function sizeButton(dta:Data) {
-  return (
-    <RadioButton name="Taille" value={dta.size} price={dta.price}>
-        {dta.size}
-    </RadioButton>
-  );
+  data: Data[];
 }
 
 function ProductSizes(props: ProductSizesProps) {
+  const [selectedSize, setSelectedSize] = useState<string | null>(null);
+
+  const handleSizeChange = (sizeValue: string) => {
+    setSelectedSize(sizeValue);
+  };
+
   return (
-    <RadioGroup name="Taille" orientation="horizontal">
-      {props.data.map(sizeButton)}
-    </RadioGroup>
+    <div className='gap-2 flex flex-row flex-wrap'>
+      {props.data.map((size, index) => (
+        <RadioButton
+          key={index}
+          name="Taille"
+          value={size.size}
+          price={size.price}
+          selectedValue={selectedSize}
+          onChange={handleSizeChange}
+        >
+          {size.size}
+        </RadioButton>
+      ))}
+    </div>
   );
 }
 

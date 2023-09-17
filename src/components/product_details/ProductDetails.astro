@@ -73,7 +73,6 @@ const { image, name, description, data } = Astro.props
         <form method="dialog">
           <button class="btn btn-square btn-sm rounded-md btn-ghost absolute right-2 top-2">✕</button>
         </form>
-
         <div class="my-[75px] gap-[25px] flex flex-col justify-center">
           <img src={circle.src} alt="" width="122px" class="m-auto">
           <h1 class="w-[180px] text-4xl text-center m-auto font-semibold">Commande confirmé!</h1>
@@ -83,7 +82,7 @@ const { image, name, description, data } = Astro.props
 
         <form method="dialog" class="px-8 pb-8 pt-0">
           <!-- if there is a button in form, it will close the modal -->
-          <button class="btn w-full">Close</button>
+          <button class="btn w-full bg-slate-900 hover:bg-slate-800 text-white">Fermer</button>
         </form>
  
         
@@ -132,6 +131,8 @@ const { image, name, description, data } = Astro.props
           let currentDate = `${month}/${day}/${year}`;
 
           submision['Date'] = currentDate;
+
+          submision.Taille = form.Taille.value;
 
           const { error } = await supbase.from('Commandes').insert([submision], { returning: 'minimal'}).select()
 
