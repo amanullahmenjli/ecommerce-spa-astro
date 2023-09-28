@@ -22,7 +22,15 @@ const RadioButton: React.FC<CustomRadioProps> = ({
   // Use onChange event handler for radio input
   const handleRadioChange = () => {
     onChange(value);
+    const q = parseInt(document.getElementById('quantity')!.value);
+    document.getElementById('initial_price')!.value = price;
+    document.getElementById('final_price')!.innerHTML = parseInt(price) * q + ' DT';
+    document.getElementById('old_price')!.innerHTML = parseInt(price) * q * 2 + ' DT';
   };
+
+  const doThisWhenASizeIsClicked = () => {
+    handleRadioChange();
+  }
 
   return (
     <label htmlFor={value}>
@@ -37,7 +45,7 @@ const RadioButton: React.FC<CustomRadioProps> = ({
           name={name}
           id={value}
           value={value}
-          onChange={handleRadioChange} 
+          onChange={doThisWhenASizeIsClicked} 
           checked={isSelected}
         />
         <span className='text-lg font-medium'>

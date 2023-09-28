@@ -60,6 +60,8 @@ const { image, name, description, data } = Astro.props
         <!-- * Quantity -->
         <Quantity></Quantity>
 
+        <input type="hidden" name="" id="initial_price" value={data[0].price}>
+
         <!-- * Submit Button -->
         <div class="my-auto row-auto">
           <input type="submit" value="J'Achète"  class="bg-primary text-white cursor-pointer btn-md rounded-md text-base">
