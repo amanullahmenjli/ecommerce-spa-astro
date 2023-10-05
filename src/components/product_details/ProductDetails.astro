@@ -104,6 +104,10 @@ const { image, name, description, data } = Astro.props
 
   const form = document.getElementById('commande')
 
+
+const floatValue = extractFloatFromString(inputString);
+
+
   form.addEventListener('submit', async (event) => {
           event.preventDefault();
 
@@ -141,7 +145,7 @@ const { image, name, description, data } = Astro.props
           if (error) {
               console.log(error)
           } else {
-            const final_price = parseFloat(document.getElementById('final_price').innerHTML.split(' ')[0])
+            const final_price = parseFloat(document.getElementById('final_price').innerHTML.match(/[-+]?[0-9]*\.?[0-9]+/)[0])
             sucess.showModal()
             fbq('track', 'Purchase', {currency: "TND", value: final_price});
             form.reset()
