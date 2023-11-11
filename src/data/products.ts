@@ -113,29 +113,29 @@ const products: Product[] = [
     description: "Découvrez le confort et le soutien luxueux du matelas 9 étoiles soft. Le matelas est garanti 10 ans et livré à domicile gratuitement sur toute la Tunisie. Il a 25 cm d’épaisseur et il est recouvert de tissu Jacquard très confortable. La carcasse en ressorts biconiques de haute section offre un soutien ferme. L’isolation du matelas et réalisée avec une plaque de feutre super rigide et de haute densité de 1000 g/m2, associée à 2 plaques de 7 cm de mousse haute densité , apporte à ce matelas un confort de couchage très satisfaisant."
   },
 
-  // Matelas ortho pillow top category
-  {
-    name: "Matelas ortho pillow top 10 étoiles 2 places 32cm",
-    image: pillowtop2, // Corresponding image
-    data: [
-      { size: "190/160", price: "549" },
-      { size: "190/140", price: "539" },
-      { size: "200/160", price: "599" },
-      { size: "200/180", price: "650" }
-    ],
-    description: 'Produit De Haute Qualité ⭐  ✅ Le Matelas de luxe Euro Top 10 étoiles est reconnu pour son confort et sa qualité de finition haut de gamme.  👉 Garantie 10 Ans 👉 30 Nuits d’essai 👉 Livraison et Retour gratuits sur toute la Tunisie. 👉 +1000 clients satisfaits ! 👉 Un savoir-faire artisanal unique 👉 Paiement par facilité et sans frais 👉 Paiement à la livraison après vérification du produit. 👉 Hauteur 28-30cm 👉 Aération optimale 👉 Ressort haut de section  Structure :  Recouvert de tissu tricoté très doux au toucher. Technologie des lames en mousse pour assurer une bonne fermeté du matelas. Une couche très ferme en mousse HR : High Résistance (nouvelle technologie). Une couche de mousse 28/30',
-  },
-  {
-    name: "Matelas ortho pillow top 10 étoiles 1 place 32cm",
-    image: pillowtop1, // Corresponding image
-    data: [
-      { size: "190/90", price: "385" },
-      { size: "190/80", price: "375" },
-      { size: "190/100", price: "405" },
-      { size: "190/120", price: "410" }
-    ],
-    description: 'Produit De Haute Qualité ⭐  ✅ Le Matelas de luxe Euro Top 10 étoiles est reconnu pour son confort et sa qualité de finition haut de gamme.  👉 Garantie 10 Ans 👉 30 Nuits d’essai 👉 Livraison et Retour gratuits sur toute la Tunisie. 👉 +1000 clients satisfaits ! 👉 Un savoir-faire artisanal unique 👉 Paiement par facilité et sans frais 👉 Paiement à la livraison après vérification du produit. 👉 Hauteur 28-30cm 👉 Aération optimale 👉 Ressort haut de section  Structure :  Recouvert de tissu tricoté très doux au toucher. Technologie des lames en mousse pour assurer une bonne fermeté du matelas. Une couche très ferme en mousse HR : High Résistance (nouvelle technologie). Une couche de mousse 28/30',
-  },
+    /*// Matelas ortho pillow top category
+    {
+      name: "Matelas ortho pillow top 10 étoiles 2 places 32cm",
+      image: pillowtop2, // Corresponding image
+      data: [
+        { size: "190/160", price: "549" },
+        { size: "190/140", price: "539" },
+        { size: "200/160", price: "599" },
+        { size: "200/180", price: "650" }
+      ],
+      description: 'Produit De Haute Qualité ⭐  ✅ Le Matelas de luxe Euro Top 10 étoiles est reconnu pour son confort et sa qualité de finition haut de gamme.  👉 Garantie 10 Ans 👉 30 Nuits d’essai 👉 Livraison et Retour gratuits sur toute la Tunisie. 👉 +1000 clients satisfaits ! 👉 Un savoir-faire artisanal unique 👉 Paiement par facilité et sans frais 👉 Paiement à la livraison après vérification du produit. 👉 Hauteur 28-30cm 👉 Aération optimale 👉 Ressort haut de section  Structure :  Recouvert de tissu tricoté très doux au toucher. Technologie des lames en mousse pour assurer une bonne fermeté du matelas. Une couche très ferme en mousse HR : High Résistance (nouvelle technologie). Une couche de mousse 28/30',
+    },
+    {
+      name: "Matelas ortho pillow top 10 étoiles 1 place 32cm",
+      image: pillowtop1, // Corresponding image
+      data: [
+        { size: "190/90", price: "385" },
+        { size: "190/80", price: "375" },
+        { size: "190/100", price: "405" },
+        { size: "190/120", price: "410" }
+      ],
+      description: 'Produit De Haute Qualité ⭐  ✅ Le Matelas de luxe Euro Top 10 étoiles est reconnu pour son confort et sa qualité de finition haut de gamme.  👉 Garantie 10 Ans 👉 30 Nuits d’essai 👉 Livraison et Retour gratuits sur toute la Tunisie. 👉 +1000 clients satisfaits ! 👉 Un savoir-faire artisanal unique 👉 Paiement par facilité et sans frais 👉 Paiement à la livraison après vérification du produit. 👉 Hauteur 28-30cm 👉 Aération optimale 👉 Ressort haut de section  Structure :  Recouvert de tissu tricoté très doux au toucher. Technologie des lames en mousse pour assurer une bonne fermeté du matelas. Une couche très ferme en mousse HR : High Résistance (nouvelle technologie). Une couche de mousse 28/30',
+    },*/
 
   // Matelas orthomédical category
   {
