@@ -115,7 +115,7 @@ const products: Product[] = [
 
   // Matelas orthomédical category
   {
-    name: "Matelas orthomédical 11 étoiles 2 places",
+    name: "Matelas orthomédical medico plus  11 étoiles 2 places",
     image: orthomed2, // Corresponding image
     data:[
       { size:"190/160", price:"699" },
@@ -126,7 +126,7 @@ const products: Product[] = [
     description: "Caractéristiques du Matelas Haute Gamme:" + "- Hauteur: 27 cm" + "- Supporte jusqu'à: 220 kg par personne" + "- Technologie de Ressort: Ressort Bonnells pour un soutien optimal" + "- Réversible: Le matelas peut être retourné pour une usure uniforme" + "- Tissu: Fabriqué en 100 % coton, anti-acarien pour un environnement sain" + "- Sécurité Incendie: Résistant au feu pour une tranquillité d'esprit accrue" + "Ce matelas haute gamme offre un confort inégalé et une qualité exceptionnelle pour des nuits de sommeil parfaites, ce qui en fait le choix idéal pour ceux qui recherchent l'excellence dans leur sommeil. 🥇",
   },
   {
-    name: "Matelas orthomédical 11 étoiles 1 place",
+    name: "Matelas orthomédical medico plus  11 étoiles 1 place",
     image: venise1, // Corresponding image
     data:[
       { size:"190/90", price:"399" },
@@ -138,7 +138,7 @@ const products: Product[] = [
 
   // Matelas orthomédical category continued
   {
-    name: "Matelas orthomédical 13 étoiles 2 places",
+    name: "Matelas orthomédical relax plus  13 étoiles 2 places",
     image: orthomed132, // Corresponding image
     data:[
       { size:"190/160", price:"849" },
@@ -149,7 +149,7 @@ const products: Product[] = [
     description: "Caractéristiques du Matelas Haute Gamme:" + "- Hauteur: 28 cm" + "- Supporte jusqu'à: 260 kg par personne" + "- Technologie de Ressort: Ressort Ensachés pour un soutien optimal" + "- Réversible: Le matelas peut être retourné pour une usure uniforme" + "- Tissu: Fabriqué en 100 % coton, anti-acarien pour un environnement sain" + "- Sécurité Incendie: Résistant au feu pour une tranquillité d'esprit accrue" + "Ce matelas haute gamme offre un confort inégalé et une qualité exceptionnelle pour des nuits de sommeil parfaites, ce qui en fait le choix idéal pour ceux qui recherchent l'excellence dans leur sommeil. 🥇",
     },
   {
-    name: "Matelas orthomédical 13 étoiles 1 place",
+    name: "Matelas orthomédical relax plus 13 étoiles 1 place",
     image: orthomed131, // Corresponding image
     data:[
       { size:"190/90", price:"490" },
@@ -161,7 +161,7 @@ const products: Product[] = [
   },
   // Matelas orthomédical category continued
   {
-    name: "Matelas orthomédical 15 étoiles 2 places",
+    name: "Matelas orthomédical tendress  15 étoiles 2 places",
     image: orthomed152, // Corresponding image
     data:[
       { size:"190/160", price:"1199" },
@@ -172,7 +172,7 @@ const products: Product[] = [
     description: "MATLAS ERGONOMIQUE À RESSORTS DE HAUTE QUALITÉ : Découvrez notre matelas ergonomique à ressorts de la plus haute qualité, conçu pour vous offrir un sommeil incomparable. Avec une capacité de support allant jusqu'à 300 kg par personne, ce matelas est la solution idéale pour un repos bien mérité. Avec une hauteur de 30 cm, ce matelas vous offre un confort exceptionnel et un soutien optimal pour un sommeil réparateur. Les ressorts ensachés garantissent une répartition uniforme du poids corporel, réduisant ainsi les points de pression et offrant un soutien individuel à chaque partie de votre corps. La réversibilité de ce matelas le rend polyvalent, vous permettant de le retourner pour prolonger sa durée de vie. Le tissu en 100 % coton est spécialement traité pour être anti-acarien, assurant un environnement de sommeil propre et sain. De plus, ce matelas est résistant au feu, offrant une tranquillité d'esprit supplémentaire en matière de sécurité. Nous avons tellement confiance en la qualité de notre matelas ergonomique à ressorts qu'il est livré avec une garantie exceptionnelle de 11 ans. Investissez dans votre bien-être et votre confort avec notre matelas ergonomique de haute qualité. Profitez d'un sommeil de qualité supérieure et d'un soutien inégalé pour de nombreuses nuits à venir."
   },
   {
-    name: "Matelas orthomédical 15 étoiles 1 place",
+    name: "Matelas orthomédical tendresse  15 étoiles 1 place",
     image: orthomed151, // Corresponding image
     data:[
       { size:"190/90", price:"650" },
