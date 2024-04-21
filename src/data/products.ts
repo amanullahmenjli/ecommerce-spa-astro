@@ -43,7 +43,7 @@ interface Product {
 const products: Product[] = [
   // Matelas orthopédique category
   {
-    name: "Matelas orthopédique comfort plus 2 places",
+    name: "Matelas orthopédique confort plus 2 places",
     image: comfortplus, // Corresponding image
     data: [
       { size: "190/160", price: "299" },
@@ -54,7 +54,7 @@ const products: Product[] = [
     description: "Découvrez le confort et le soutien luxueux du matelas 6 étoiles. Le matelas est garanti 5 ans et livré à domicile gratuitement sur toute la Tunisie. Il a 23 cm d’épaisseur et il est recouvert de tissu Jacquard très confortable. La carcasse en ressorts biconiques de haute section offre un soutien ferme. L’isolation du matelas et réalisée avec une plaque de feutre super rigide et de haute densité de 1000 g/m2, associée à 2 plaques de 3 cm de mousse haute densité , apporte à ce matelas un confort de couchage très satisfaisant."
   },
   {
-    name: "Matelas orthopédique comfort plus 1 place",
+    name: "Matelas orthopédique confort plus 1 place",
     image: comfortplus1, // Corresponding image
     data: [
       { size: "190/90", price: "199" },
