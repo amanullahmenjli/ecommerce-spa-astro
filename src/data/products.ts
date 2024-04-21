@@ -161,7 +161,7 @@ const products: Product[] = [
   },
   // Matelas orthomédical category continued
   {
-    name: "Matelas orthomédical tendress  15 étoiles 2 places",
+    name: "Matelas orthomédical tendresse  15 étoiles 2 places",
     image: orthomed152, // Corresponding image
     data:[
       { size:"190/160", price:"1199" },
