@@ -1,52 +1,117 @@
 ---
-const title: String = 'Super Siesta'
-import Footer from '../layouts/Footer.astro'
-import ProductsSection from '../layouts/ProductsSection.astro'
-import { Image } from 'astro:assets'
-import Logo from '~/assets/images/Logo.jpg'
-import DashedMessage from '../components/messages/DashedMessage.astro'
-import FlipCountdownTimer from '../components/countdown_timer/CountdownTimer.astro'
-import BouncingMessage from '../components/messages/BouncingMessage.astro'
-import CardMessage from '../components/messages/CardMessage.astro'
-import ProductsSection1 from '../layouts/ProductsSection1.astro'
-
+const title: String = "Super Siesta";
+import Footer from "../layouts/Footer.astro";
+import ProductsSection from "../layouts/ProductsSection.astro";
+import { Image } from "astro:assets";
+import Logo from "~/assets/images/Logo.jpg";
+import DashedMessage from "../components/messages/DashedMessage.astro";
+import FlipCountdownTimer from "../components/countdown_timer/CountdownTimer.astro";
+import BouncingMessage from "../components/messages/BouncingMessage.astro";
+import CardMessage from "../components/messages/CardMessage.astro";
+import ProductsSection1 from "../layouts/ProductsSection1.astro";
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <link rel="icon" type="image/x-icon" href="/favicon.svg">
-        <title>{title}</title> 
+        <link rel="icon" type="image/x-icon" href="/favicon.svg" />
+        <title>{title}</title>
 
         <!-- Meta Pixel Code -->
         <script>
-            !function(f,b,e,v,n,t,s)
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            s.parentNode.insertBefore(t,s)}(window, document,'script',
-            'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1257910878238381');
-            fbq('track', 'PageView');
-            </script>
-            <noscript><img height="1" width="1" style="display:none"
-            src="https://www.facebook.com/tr?id=1257910878238381&ev=PageView&noscript=1"
-          /></noscript>
-          <!-- End Meta Pixel Code -->
+            !(function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod
+                        ? n.callMethod.apply(n, arguments)
+                        : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = "2.0";
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            })(
+                window,
+                document,
+                "script",
+                "https://connect.facebook.net/en_US/fbevents.js",
+            );
+            fbq("init", "1257910878238381");
+            fbq("track", "PageView");
+        </script>
+        <noscript
+            ><img
+                height="1"
+                width="1"
+                style="display:none"
+                src="https://www.facebook.com/tr?id=1257910878238381&ev=PageView&noscript=1"
+            /></noscript
+        >
+        <!-- End Meta Pixel Code -->
+
+        <!-- Meta Pixel Code -->
+        <script>
+            !(function (f, b, e, v, n, t, s) {
+                if (f.fbq) return;
+                n = f.fbq = function () {
+                    n.callMethod
+                        ? n.callMethod.apply(n, arguments)
+                        : n.queue.push(arguments);
+                };
+                if (!f._fbq) f._fbq = n;
+                n.push = n;
+                n.loaded = !0;
+                n.version = "2.0";
+                n.queue = [];
+                t = b.createElement(e);
+                t.async = !0;
+                t.src = v;
+                s = b.getElementsByTagName(e)[0];
+                s.parentNode.insertBefore(t, s);
+            })(
+                window,
+                document,
+                "script",
+                "https://connect.facebook.net/en_US/fbevents.js",
+            );
+            fbq("init", "738403841827637");
+            fbq("track", "PageView");
+        </script>
+        <noscript
+            ><img
+                height="1"
+                width="1"
+                style="display:none"
+                src="https://www.facebook.com/tr?id=738403841827637&ev=PageView&noscript=1"
+            /></noscript
+        >
+        <!-- End Meta Pixel Code -->
     </head>
 
-    
-    <body class="relative bg-[url('~/assets/images/big-bg.png')] bg-top bg-cover bg-fixed bg-no-repeat gap-3 flex flex-col">
-        <header  transition:persist class="flex flex-col gap-3 justify-center w-full text-center relative pt-2 px-2">
+    <body
+        class="relative bg-[url('~/assets/images/big-bg.png')] bg-top bg-cover bg-fixed bg-no-repeat gap-3 flex flex-col"
+    >
+        <header
+            transition:persist
+            class="flex flex-col gap-3 justify-center w-full text-center relative pt-2 px-2"
+        >
             <!-- * Logo -->
             <a href="/">
-                <Image src={Logo} alt="logo" class="h-28 w-auto mx-auto sm::absolute sm:top-4 sm:left-4"/>
+                <Image
+                    src={Logo}
+                    alt="logo"
+                    class="h-28 w-auto mx-auto sm::absolute sm:top-4 sm:left-4"
+                />
             </a>
-            
+
             <DashedMessage message="إشري بأفضل الأسعار في تونس" dir="rtl" />
 
             <FlipCountdownTimer />
@@ -55,37 +120,32 @@ import ProductsSection1 from '../layouts/ProductsSection1.astro'
                 message="عدي كوموند و التوصيل لباب الدار، و الدفع عند الاستلام"
                 dir="rtl"
             />
-    
+
             <CardMessage message="التوصيل مجاني لكامل تراب الجمهورية" />
         </header>
 
         <ProductsSection1 />
-        
+
         <Footer />
     </body>
 </html>
 
-
-
-
 <style>
-
     * {
-        font-family: 'Roboto';
+        font-family: "Roboto";
         color: black;
     }
     @font-face {
-    font-family: 'TheSans';
-    src: url('/fonts/TheSans-Bold.ttf');
-    font-weight: bold;
-    font-style: normal;
-}
+        font-family: "TheSans";
+        src: url("/fonts/TheSans-Bold.ttf");
+        font-weight: bold;
+        font-style: normal;
+    }
 
-@font-face {
-    font-family: 'Roboto';
-    src: url('/fonts/Roboto-Regular.ttf');
-    font-weight: 400;
-    font-style: normal;
-}
-
+    @font-face {
+        font-family: "Roboto";
+        src: url("/fonts/Roboto-Regular.ttf");
+        font-weight: 400;
+        font-style: normal;
+    }
 </style>
