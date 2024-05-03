@@ -119,9 +119,9 @@ const products: Product[] = [
     image: orthomed2, // Corresponding image
     data:[
       { size:"190/160", price:"699" },
-      { size:"190/140", price:"670" },
-      { size:"200/160", price:"780" },
-      { size:"200/180", price:"899" },
+      { size:"190/140", price:"649" },
+      { size:"200/160", price:"749" },
+      { size:"200/180", price:"849" },
     ],
     description: "Caractéristiques du Matelas Haute Gamme:" + "- Hauteur: 27 cm" + "- Supporte jusqu'à: 220 kg par personne" + "- Technologie de Ressort: Ressort Bonnells pour un soutien optimal" + "- Réversible: Le matelas peut être retourné pour une usure uniforme" + "- Tissu: Fabriqué en 100 % coton, anti-acarien pour un environnement sain" + "- Sécurité Incendie: Résistant au feu pour une tranquillité d'esprit accrue" + "Ce matelas haute gamme offre un confort inégalé et une qualité exceptionnelle pour des nuits de sommeil parfaites, ce qui en fait le choix idéal pour ceux qui recherchent l'excellence dans leur sommeil. 🥇",
   },
@@ -132,7 +132,7 @@ const products: Product[] = [
       { size:"190/90", price:"399" },
       { size:"190/80", price:"389" },
       { size:"190/100", price:"435" },
-      { size:"190/120", price:"550" }
+      { size:"190/120", price:"485" }
     ],
     description: "Caractéristiques du Matelas Haute Gamme:" + "- Hauteur: 27 cm" + "- Supporte jusqu'à: 220 kg par personne" + "- Technologie de Ressort: Ressort Bonnells pour un soutien optimal" + "- Réversible: Le matelas peut être retourné pour une usure uniforme" + "- Tissu: Fabriqué en 100 % coton, anti-acarien pour un environnement sain" + "- Sécurité Incendie: Résistant au feu pour une tranquillité d'esprit accrue" + "Ce matelas haute gamme offre un confort inégalé et une qualité exceptionnelle pour des nuits de sommeil parfaites, ce qui en fait le choix idéal pour ceux qui recherchent l'excellence dans leur sommeil. 🥇",  },
 
