@@ -70,10 +70,10 @@ const products: Product[] = [
     name: "Matelas orthopédique soft plus 7 étoiles 2 places",
     image: soft2, // Corresponding image
     data: [
-      { size: "190/160", price: "390" },
-      { size: "190/140", price: "375" },
-      { size: "200/160", price: "440" },
-      { size: "200/180", price: "499" }
+      { size: "190/160", price: "380" },
+      { size: "190/140", price: "350" },
+      { size: "200/160", price: "430" },
+      { size: "200/180", price: "480" }
     ],
     description: "Découvrez le confort et le soutien luxueux du matelas 7 étoiles soft. Le matelas est garanti 10 ans et livré à domicile gratuitement sur toute la Tunisie. Il a 25 cm d’épaisseur et il est recouvert de tissu Jacquard très confortable. La carcasse en ressorts biconiques de haute section offre un soutien ferme. L’isolation du matelas et réalisée avec une plaque de feutre super rigide et de haute densité de 1000 g/m2, associée à 2 plaques de 5 cm de mousse haute densité , apporte à ce matelas un confort de couchage très satisfaisant."
   },
@@ -81,10 +81,10 @@ const products: Product[] = [
     name: "Matelas orthopédique soft plus 7 étoiles 1 place",
     image: soft1, // Corresponding image
     data: [
-      { size: "190/90", price: "255" },
+      { size: "190/90", price: "245" },
       { size: "190/80", price: "235" },
       { size: "190/100", price: "285" },
-      { size: "190/120", price: "350" }
+      { size: "190/120", price: "320" }
     ],
     description: "Découvrez le confort et le soutien luxueux du matelas 7 étoiles soft. Le matelas est garanti 10 ans et livré à domicile gratuitement sur toute la Tunisie. Il a 25 cm d’épaisseur et il est recouvert de tissu Jacquard très confortable. La carcasse en ressorts biconiques de haute section offre un soutien ferme. L’isolation du matelas et réalisée avec une plaque de feutre super rigide et de haute densité de 1000 g/m2, associée à 2 plaques de 5 cm de mousse haute densité , apporte à ce matelas un confort de couchage très satisfaisant."
   },
