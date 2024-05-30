@@ -144,6 +144,7 @@ const { image, name, description, data } = Astro.props
             const final_price = parseFloat(document.getElementById('final_price').innerHTML.match(/[-+]?[0-9]*\.?[0-9]+/)[0])
             sucess.showModal()
             fbq('trackCustom', 'Purchase', {currency: "TND", value: final_price});
+            fbq('trackCustom', 'Purchase', {currency: "TND", value: final_price});
 
             form.reset()
           }
